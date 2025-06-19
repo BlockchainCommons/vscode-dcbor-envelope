@@ -34,6 +34,14 @@
       "match": "'(?:[^'\\\\]|\\\\.)*'"
     },
     {
+      "name": "constant.numeric.date.json",
+      "match": "\\b\\d{4}-\\d{2}-\\d{2}(?:T\\d{2}:\\d{2}:\\d{2}Z?)?\\b"
+    },
+    {
+      "name": "constant.numeric.json",
+      "match": "\\b[0-9]*[a-fA-F][0-9a-fA-F]*\\b"
+    },
+    {
       "name": "constant.numeric.json",
       "match": "-?(?:0|[1-9]\\d*)(?:\\.\\d+)?(?:[eE][+-]?\\d+)?"
     },
