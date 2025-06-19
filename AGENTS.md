@@ -12,4 +12,4 @@ Use this as a scratch pad for notes on progress.
    code --extensionDevelopmentPath=$(pwd)
    ```
 
-   VS Code will open a new window with the extension enabled. Open a file with the `.bjson` extension to see the highlighting.
+    VS Code will open a new window with the extension enabled. Open a file with the `.dcbor` or `.envelope` extension to see the highlighting.

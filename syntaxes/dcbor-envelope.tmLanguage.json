@@ -1,5 +1,5 @@
 {
-  "scopeName": "source.brackets-json",
+  "scopeName": "source.dcbor-envelope",
   "patterns": [
     {
       "name": "comment.block.inline.json",

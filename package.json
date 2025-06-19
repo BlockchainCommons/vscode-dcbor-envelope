@@ -1,7 +1,7 @@
 {
-  "name": "brackets-json-syntax",
-  "displayName": "Brackets JSON Syntax",
-  "description": "Syntax highlighting for square brackets, JSON strings and numbers",
+  "name": "dcbor-envelope",
+  "displayName": "dCBOR-Envelope",
+  "description": "Syntax highlighting for dCBOR envelopes",
   "version": "0.0.1",
   "publisher": "local",
   "engines": {
@@ -13,30 +13,30 @@
     "compile": "tsc -p ./",
     "test": "jest"
   },
-  "keywords": ["syntax", "brackets", "json"],
+  "keywords": ["syntax", "dcbor", "envelope"],
   "license": "MIT",
   "type": "commonjs",
   "contributes": {
     "languages": [
       {
-        "id": "brackets-json",
-        "aliases": ["Brackets JSON", "brackets-json"],
-        "extensions": [".bjson"],
+        "id": "dcbor-envelope",
+        "aliases": ["dCBOR-Envelope", "dcbor", "envelope"],
+        "extensions": [".dcbor", ".envelope"],
         "configuration": "./language-configuration.json"
       }
     ],
       "grammars": [
         {
-          "language": "brackets-json",
-          "scopeName": "source.brackets-json",
-          "path": "./syntaxes/brackets-json.tmLanguage.json"
+          "language": "dcbor-envelope",
+          "scopeName": "source.dcbor-envelope",
+          "path": "./syntaxes/dcbor-envelope.tmLanguage.json"
         }
       ],
       "themes": [
         {
-          "label": "Brackets JSON Theme",
+          "label": "dCBOR Envelope Theme",
           "uiTheme": "vs-dark",
-          "path": "./themes/brackets-json-color-theme.json"
+          "path": "./themes/dcbor-envelope-color-theme.json"
         }
       ]
     },
