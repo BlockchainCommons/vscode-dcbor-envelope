@@ -18,6 +18,18 @@
     {
       "scope": "punctuation.separator.json",
       "settings": { "foreground": "#C586C0" }
+    },
+    {
+      "scope": "punctuation.square.brackets.json",
+      "settings": { "foreground": "#D4D4D4" }
+    },
+    {
+      "scope": "constant.numeric.json",
+      "settings": { "foreground": "#B5CEA8" }
+    },
+    {
+      "scope": "constant.language.json",
+      "settings": { "foreground": "#569CD6" }
     }
   ]
 }
