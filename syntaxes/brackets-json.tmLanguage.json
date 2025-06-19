@@ -1,0 +1,17 @@
+{
+  "scopeName": "source.brackets-json",
+  "patterns": [
+    {
+      "name": "punctuation.square.brackets.json",
+      "match": "\\[|\\]"
+    },
+    {
+      "name": "string.quoted.double.json",
+      "match": "\"(?:[^\"\\\\]|\\\\.)*\""
+    },
+    {
+      "name": "constant.numeric.json",
+      "match": "-?(?:0|[1-9]\\d*)(?:\\.\\d+)?(?:[eE][+-]?\\d+)?"
+    }
+  ]
+}
