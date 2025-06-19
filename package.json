@@ -1,0 +1,45 @@
+{
+  "name": "brackets-json-syntax",
+  "displayName": "Brackets JSON Syntax",
+  "description": "Syntax highlighting for square brackets, JSON strings and numbers",
+  "version": "0.0.1",
+  "publisher": "local",
+  "engines": {
+    "vscode": "^1.75.0"
+  },
+  "categories": ["Other"],
+  "main": "./dist/extension.js",
+  "scripts": {
+    "compile": "tsc -p ./",
+    "test": "jest"
+  },
+  "keywords": ["syntax", "brackets", "json"],
+  "license": "MIT",
+  "type": "commonjs",
+  "contributes": {
+    "languages": [
+      {
+        "id": "brackets-json",
+        "aliases": ["Brackets JSON", "brackets-json"],
+        "extensions": [".bjson"],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "brackets-json",
+        "scopeName": "source.brackets-json",
+        "path": "./syntaxes/brackets-json.tmLanguage.json"
+      }
+    ]
+  },
+  "devDependencies": {
+    "@types/jest": "^29.0.0",
+    "@types/vscode": "^1.75.0",
+    "jest": "^29.0.0",
+    "ts-jest": "^29.0.0",
+    "typescript": "^4.9.5",
+    "vscode-textmate": "^9.2.0",
+    "vscode-oniguruma": "^2.0.1"
+  }
+}
