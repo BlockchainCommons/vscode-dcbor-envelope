@@ -36,6 +36,14 @@
       "settings": { "foreground": "#9e87d0" }
     },
     {
+      "scope": "keyword.other.literal.json",
+      "settings": { "foreground": "#d16969" }
+    },
+    {
+      "scope": "constant.other.ur.json",
+      "settings": { "foreground": "#b5cea8" }
+    },
+    {
       "scope": "keyword.other.atword.json",
       "settings": { "foreground": "#c586c0" }
     },
