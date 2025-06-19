@@ -1,0 +1,23 @@
+{
+  "name": "Brackets JSON Theme",
+  "type": "dark",
+  "colors": {},
+  "tokenColors": [
+    {
+      "scope": "string.quoted.double.json",
+      "settings": { "foreground": "#CE9178" }
+    },
+    {
+      "scope": "string.quoted.single.json",
+      "settings": { "foreground": "#D7BA7D" }
+    },
+    {
+      "scope": "constant.numeric.hex.json",
+      "settings": { "foreground": "#4EC9B0" }
+    },
+    {
+      "scope": "punctuation.separator.json",
+      "settings": { "foreground": "#C586C0" }
+    }
+  ]
+}

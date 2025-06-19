@@ -64,3 +64,35 @@ test('tokenize boolean and null literals', async () => {
   const scopes = tokens.map(t => t.scopes[t.scopes.length - 1]);
   expect(scopes).toContain('constant.language.json');
 });
+
+test('tokenize separator punctuation', async () => {
+  const grammarPath = path.join(__dirname, '..', 'syntaxes', 'brackets-json.tmLanguage.json');
+  const grammarContent = fs.readFileSync(grammarPath, 'utf8');
+  const registry = new Registry({
+    onigLib: Promise.resolve(onigLib),
+    loadGrammar: async () => JSON.parse(grammarContent)
+  });
+  const grammar = await registry.loadGrammar('source.brackets-json');
+  if (!grammar) throw new Error('Grammar failed to load');
+
+  const line = '[1,2:3;]';
+  const { tokens } = grammar.tokenizeLine(line, INITIAL);
+  const scopes = tokens.map(t => t.scopes[t.scopes.length - 1]);
+  expect(scopes).toContain('punctuation.separator.json');
+});
+
+test('tokenize hex literals', async () => {
+  const grammarPath = path.join(__dirname, '..', 'syntaxes', 'brackets-json.tmLanguage.json');
+  const grammarContent = fs.readFileSync(grammarPath, 'utf8');
+  const registry = new Registry({
+    onigLib: Promise.resolve(onigLib),
+    loadGrammar: async () => JSON.parse(grammarContent)
+  });
+  const grammar = await registry.loadGrammar('source.brackets-json');
+  if (!grammar) throw new Error('Grammar failed to load');
+
+  const line = "[h'1a2b']";
+  const { tokens } = grammar.tokenizeLine(line, INITIAL);
+  const scopes = tokens.map(t => t.scopes[t.scopes.length - 1]);
+  expect(scopes).toContain('constant.numeric.hex.json');
+});
