@@ -16,13 +16,13 @@ beforeAll(async () => {
 });
 
 test('tokenize square brackets, strings and numbers', async () => {
-  const grammarPath = path.join(__dirname, '..', 'syntaxes', 'brackets-json.tmLanguage.json');
+  const grammarPath = path.join(__dirname, '..', 'syntaxes', 'dcbor-envelope.tmLanguage.json');
   const grammarContent = fs.readFileSync(grammarPath, 'utf8');
   const registry = new Registry({
     onigLib: Promise.resolve(onigLib),
     loadGrammar: async () => JSON.parse(grammarContent)
   });
-  const grammar = await registry.loadGrammar('source.brackets-json');
+  const grammar = await registry.loadGrammar('source.dcbor-envelope');
   if (!grammar) throw new Error('Grammar failed to load');
 
   const line = '["foo", 123]';
@@ -34,13 +34,13 @@ test('tokenize square brackets, strings and numbers', async () => {
 });
 
 test('tokenize single quoted strings', async () => {
-  const grammarPath = path.join(__dirname, '..', 'syntaxes', 'brackets-json.tmLanguage.json');
+  const grammarPath = path.join(__dirname, '..', 'syntaxes', 'dcbor-envelope.tmLanguage.json');
   const grammarContent = fs.readFileSync(grammarPath, 'utf8');
   const registry = new Registry({
     onigLib: Promise.resolve(onigLib),
     loadGrammar: async () => JSON.parse(grammarContent)
   });
-  const grammar = await registry.loadGrammar('source.brackets-json');
+  const grammar = await registry.loadGrammar('source.dcbor-envelope');
   if (!grammar) throw new Error('Grammar failed to load');
 
   const line = "['bar']";
@@ -50,13 +50,13 @@ test('tokenize single quoted strings', async () => {
 });
 
 test('tokenize boolean and null literals', async () => {
-  const grammarPath = path.join(__dirname, '..', 'syntaxes', 'brackets-json.tmLanguage.json');
+  const grammarPath = path.join(__dirname, '..', 'syntaxes', 'dcbor-envelope.tmLanguage.json');
   const grammarContent = fs.readFileSync(grammarPath, 'utf8');
   const registry = new Registry({
     onigLib: Promise.resolve(onigLib),
     loadGrammar: async () => JSON.parse(grammarContent)
   });
-  const grammar = await registry.loadGrammar('source.brackets-json');
+  const grammar = await registry.loadGrammar('source.dcbor-envelope');
   if (!grammar) throw new Error('Grammar failed to load');
 
   const line = '[true, false, null]';
@@ -66,13 +66,13 @@ test('tokenize boolean and null literals', async () => {
 });
 
 test('tokenize separator punctuation', async () => {
-  const grammarPath = path.join(__dirname, '..', 'syntaxes', 'brackets-json.tmLanguage.json');
+  const grammarPath = path.join(__dirname, '..', 'syntaxes', 'dcbor-envelope.tmLanguage.json');
   const grammarContent = fs.readFileSync(grammarPath, 'utf8');
   const registry = new Registry({
     onigLib: Promise.resolve(onigLib),
     loadGrammar: async () => JSON.parse(grammarContent)
   });
-  const grammar = await registry.loadGrammar('source.brackets-json');
+  const grammar = await registry.loadGrammar('source.dcbor-envelope');
   if (!grammar) throw new Error('Grammar failed to load');
 
   const line = '[1,2:3;]';
@@ -82,13 +82,13 @@ test('tokenize separator punctuation', async () => {
 });
 
 test('tokenize hex literals', async () => {
-  const grammarPath = path.join(__dirname, '..', 'syntaxes', 'brackets-json.tmLanguage.json');
+  const grammarPath = path.join(__dirname, '..', 'syntaxes', 'dcbor-envelope.tmLanguage.json');
   const grammarContent = fs.readFileSync(grammarPath, 'utf8');
   const registry = new Registry({
     onigLib: Promise.resolve(onigLib),
     loadGrammar: async () => JSON.parse(grammarContent)
   });
-  const grammar = await registry.loadGrammar('source.brackets-json');
+  const grammar = await registry.loadGrammar('source.dcbor-envelope');
   if (!grammar) throw new Error('Grammar failed to load');
 
   const line = "[h'1a2b']";
@@ -98,13 +98,13 @@ test('tokenize hex literals', async () => {
 });
 
 test('tokenize at-words', async () => {
-  const grammarPath = path.join(__dirname, '..', 'syntaxes', 'brackets-json.tmLanguage.json');
+  const grammarPath = path.join(__dirname, '..', 'syntaxes', 'dcbor-envelope.tmLanguage.json');
   const grammarContent = fs.readFileSync(grammarPath, 'utf8');
   const registry = new Registry({
     onigLib: Promise.resolve(onigLib),
     loadGrammar: async () => JSON.parse(grammarContent)
   });
-  const grammar = await registry.loadGrammar('source.brackets-json');
+  const grammar = await registry.loadGrammar('source.dcbor-envelope');
   if (!grammar) throw new Error('Grammar failed to load');
 
   const line = '@word';
@@ -114,13 +114,13 @@ test('tokenize at-words', async () => {
 });
 
 test('tokenize bare words', async () => {
-  const grammarPath = path.join(__dirname, '..', 'syntaxes', 'brackets-json.tmLanguage.json');
+  const grammarPath = path.join(__dirname, '..', 'syntaxes', 'dcbor-envelope.tmLanguage.json');
   const grammarContent = fs.readFileSync(grammarPath, 'utf8');
   const registry = new Registry({
     onigLib: Promise.resolve(onigLib),
     loadGrammar: async () => JSON.parse(grammarContent)
   });
-  const grammar = await registry.loadGrammar('source.brackets-json');
+  const grammar = await registry.loadGrammar('source.dcbor-envelope');
   if (!grammar) throw new Error('Grammar failed to load');
 
   const line = 'bareWord';
@@ -130,13 +130,13 @@ test('tokenize bare words', async () => {
 });
 
 test('tokenize inline comments', async () => {
-  const grammarPath = path.join(__dirname, '..', 'syntaxes', 'brackets-json.tmLanguage.json');
+  const grammarPath = path.join(__dirname, '..', 'syntaxes', 'dcbor-envelope.tmLanguage.json');
   const grammarContent = fs.readFileSync(grammarPath, 'utf8');
   const registry = new Registry({
     onigLib: Promise.resolve(onigLib),
     loadGrammar: async () => JSON.parse(grammarContent)
   });
-  const grammar = await registry.loadGrammar('source.brackets-json');
+  const grammar = await registry.loadGrammar('source.dcbor-envelope');
   if (!grammar) throw new Error('Grammar failed to load');
 
   const line = '/ inline comment /';
@@ -146,13 +146,13 @@ test('tokenize inline comments', async () => {
 });
 
 test('tokenize end of line comments', async () => {
-  const grammarPath = path.join(__dirname, '..', 'syntaxes', 'brackets-json.tmLanguage.json');
+  const grammarPath = path.join(__dirname, '..', 'syntaxes', 'dcbor-envelope.tmLanguage.json');
   const grammarContent = fs.readFileSync(grammarPath, 'utf8');
   const registry = new Registry({
     onigLib: Promise.resolve(onigLib),
     loadGrammar: async () => JSON.parse(grammarContent)
   });
-  const grammar = await registry.loadGrammar('source.brackets-json');
+  const grammar = await registry.loadGrammar('source.dcbor-envelope');
   if (!grammar) throw new Error('Grammar failed to load');
 
   const line = '# end';
@@ -162,13 +162,13 @@ test('tokenize end of line comments', async () => {
 });
 
 test('tokenize ISO-8601 dates and date/time literals', async () => {
-  const grammarPath = path.join(__dirname, '..', 'syntaxes', 'brackets-json.tmLanguage.json');
+  const grammarPath = path.join(__dirname, '..', 'syntaxes', 'dcbor-envelope.tmLanguage.json');
   const grammarContent = fs.readFileSync(grammarPath, 'utf8');
   const registry = new Registry({
     onigLib: Promise.resolve(onigLib),
     loadGrammar: async () => JSON.parse(grammarContent)
   });
-  const grammar = await registry.loadGrammar('source.brackets-json');
+  const grammar = await registry.loadGrammar('source.dcbor-envelope');
   if (!grammar) throw new Error('Grammar failed to load');
 
   const line = '[2025-06-19, 2025-06-19T21:57:12Z]';
@@ -178,13 +178,13 @@ test('tokenize ISO-8601 dates and date/time literals', async () => {
 });
 
 test('tokenize bare hex numbers', async () => {
-  const grammarPath = path.join(__dirname, '..', 'syntaxes', 'brackets-json.tmLanguage.json');
+  const grammarPath = path.join(__dirname, '..', 'syntaxes', 'dcbor-envelope.tmLanguage.json');
   const grammarContent = fs.readFileSync(grammarPath, 'utf8');
   const registry = new Registry({
     onigLib: Promise.resolve(onigLib),
     loadGrammar: async () => JSON.parse(grammarContent)
   });
-  const grammar = await registry.loadGrammar('source.brackets-json');
+  const grammar = await registry.loadGrammar('source.dcbor-envelope');
   if (!grammar) throw new Error('Grammar failed to load');
 
   const line = '[4676635a]';
@@ -194,13 +194,13 @@ test('tokenize bare hex numbers', async () => {
 });
 
 test('tokenize UR literals', async () => {
-  const grammarPath = path.join(__dirname, '..', 'syntaxes', 'brackets-json.tmLanguage.json');
+  const grammarPath = path.join(__dirname, '..', 'syntaxes', 'dcbor-envelope.tmLanguage.json');
   const grammarContent = fs.readFileSync(grammarPath, 'utf8');
   const registry = new Registry({
     onigLib: Promise.resolve(onigLib),
     loadGrammar: async () => JSON.parse(grammarContent)
   });
-  const grammar = await registry.loadGrammar('source.brackets-json');
+  const grammar = await registry.loadGrammar('source.dcbor-envelope');
   if (!grammar) throw new Error('Grammar failed to load');
 
   const line = 'ur:envelope/abcd';
@@ -210,13 +210,13 @@ test('tokenize UR literals', async () => {
 });
 
 test('tokenize keywords', async () => {
-  const grammarPath = path.join(__dirname, '..', 'syntaxes', 'brackets-json.tmLanguage.json');
+  const grammarPath = path.join(__dirname, '..', 'syntaxes', 'dcbor-envelope.tmLanguage.json');
   const grammarContent = fs.readFileSync(grammarPath, 'utf8');
   const registry = new Registry({
     onigLib: Promise.resolve(onigLib),
     loadGrammar: async () => JSON.parse(grammarContent)
   });
-  const grammar = await registry.loadGrammar('source.brackets-json');
+  const grammar = await registry.loadGrammar('source.dcbor-envelope');
   if (!grammar) throw new Error('Grammar failed to load');
 
   const line = 'ELIDED ENCRYPTED COMPRESSED';
