@@ -15,7 +15,6 @@ h'123'
 bareWord
 # End of line comment
 /inline comment/
-(/regex/i)
 
 {
     ARID(4676635a) [

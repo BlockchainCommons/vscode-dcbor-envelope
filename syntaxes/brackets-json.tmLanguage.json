@@ -2,10 +2,6 @@
   "scopeName": "source.brackets-json",
   "patterns": [
     {
-      "name": "string.regexp.json",
-      "match": "\\(\\s*/(?:[^\\\\/]|\\\\.)+/[a-zA-Z]*\\s*\\)"
-    },
-    {
       "name": "comment.block.inline.json",
       "match": "(?<!\\()\\/[^\\n]*?\\/(?![a-zA-Z])"
     },

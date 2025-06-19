@@ -54,10 +54,6 @@
     {
       "scope": ["comment.line.number-sign.json", "comment.block.inline.json"],
       "settings": { "foreground": "#8d8c8c" }
-    },
-    {
-      "scope": "string.regexp.json",
-      "settings": { "foreground": "#e86c3b" }
     }
   ]
 }
