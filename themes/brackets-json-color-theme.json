@@ -16,16 +16,20 @@
       "settings": { "foreground": "#4EC9B0" }
     },
     {
+      "scope": "constant.numeric.json",
+      "settings": { "foreground": "#6f97f0" }
+    },
+    {
+      "scope": "constant.numeric.date.json",
+      "settings": { "foreground": "#4EC9B0" }
+    },
+    {
       "scope": "punctuation.separator.json",
       "settings": { "foreground": "#acfd0a" }
     },
     {
       "scope": "punctuation.square.brackets.json",
       "settings": { "foreground": "#D4D4D4" }
-    },
-    {
-      "scope": "constant.numeric.json",
-      "settings": { "foreground": "#6f97f0" }
     },
     {
       "scope": "constant.language.json",
