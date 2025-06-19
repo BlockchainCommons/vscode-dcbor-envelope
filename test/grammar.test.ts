@@ -208,3 +208,35 @@ test('tokenize bare hex numbers', async () => {
   const scopes = tokens.map(t => t.scopes[t.scopes.length - 1]);
   expect(scopes).toContain('constant.numeric.json');
 });
+
+test('tokenize UR literals', async () => {
+  const grammarPath = path.join(__dirname, '..', 'syntaxes', 'brackets-json.tmLanguage.json');
+  const grammarContent = fs.readFileSync(grammarPath, 'utf8');
+  const registry = new Registry({
+    onigLib: Promise.resolve(onigLib),
+    loadGrammar: async () => JSON.parse(grammarContent)
+  });
+  const grammar = await registry.loadGrammar('source.brackets-json');
+  if (!grammar) throw new Error('Grammar failed to load');
+
+  const line = 'ur:envelope/abcd';
+  const { tokens } = grammar.tokenizeLine(line, INITIAL);
+  const scopes = tokens.map(t => t.scopes[t.scopes.length - 1]);
+  expect(scopes).toContain('constant.other.ur.json');
+});
+
+test('tokenize keywords', async () => {
+  const grammarPath = path.join(__dirname, '..', 'syntaxes', 'brackets-json.tmLanguage.json');
+  const grammarContent = fs.readFileSync(grammarPath, 'utf8');
+  const registry = new Registry({
+    onigLib: Promise.resolve(onigLib),
+    loadGrammar: async () => JSON.parse(grammarContent)
+  });
+  const grammar = await registry.loadGrammar('source.brackets-json');
+  if (!grammar) throw new Error('Grammar failed to load');
+
+  const line = 'ELIDED ENCRYPTED COMPRESSED';
+  const { tokens } = grammar.tokenizeLine(line, INITIAL);
+  const scopes = tokens.map(t => t.scopes[t.scopes.length - 1]);
+  expect(scopes).toContain('keyword.other.literal.json');
+});
