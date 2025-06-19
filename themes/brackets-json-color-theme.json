@@ -9,7 +9,7 @@
     },
     {
       "scope": "string.quoted.single.json",
-      "settings": { "foreground": "#D7BA7D" }
+      "settings": { "foreground": "#0ed360" }
     },
     {
       "scope": "constant.numeric.hex.json",
@@ -41,11 +41,11 @@
     },
     {
       "scope": ["comment.line.number-sign.json", "comment.block.inline.json"],
-      "settings": { "foreground": "#606060" }
+      "settings": { "foreground": "#8d8c8c" }
     },
     {
       "scope": "string.regexp.json",
-      "settings": { "foreground": "#ce9178" }
+      "settings": { "foreground": "#e86c3b" }
     }
   ]
 }

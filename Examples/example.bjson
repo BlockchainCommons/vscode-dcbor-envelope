@@ -13,3 +13,73 @@ true, false, null
 
 h'123'
 bareWord
+# End of line comment
+/inline comment/
+(/regex/i)
+
+{
+    ARID(4676635a) [
+        'isA': "Certificate of Completion"
+        "certificateNumber": "123-456-789"
+        "continuingEducationUnits": 1
+        "expirationDate": 2028-01-01
+        "firstName": "James"
+        "issueDate": 2020-01-01
+        "lastName": "Maxwell"
+        "photo": "This is James Maxwell's photo."
+        "professionalDevelopmentHours": 15
+        "subject": "RF and Microwave Engineering"
+        "topics": ["Subject 1", "Subject 2"]
+        'controller': "Example Electrical Engineering Board"
+        'issuer': "Example Electrical Engineering Board"
+    ]
+} [
+    'note': "Signed by Example Electrical Engineering Board"
+    'signed': Signature
+]
+
+Bytes(16) [
+    'isA': 'Seed'
+    'attachment': {
+        "Attachment Data V1"
+    } [
+        'conformsTo': "https://example.com/seed-attachment/v1"
+        'vendor': "com.example"
+    ]
+    'attachment': {
+        "Attachment Data V2"
+    } [
+        'conformsTo': "https://example.com/seed-attachment/v2"
+        'vendor': "com.example"
+    ]
+    'name': "Alice's Seed"
+    'note': "This is the note."
+]
+
+200(   / envelope /
+    [
+        {
+            201("C"):   / leaf /
+            201("D")   / leaf /
+        },
+        {
+            201("E"):   / leaf /
+            201("F")   / leaf /
+        }
+    ]
+)
+
+"subject" [
+    "predicate" [
+        "predicate-predicate": "predicate-object"
+    ]
+    : "object" [
+        "object-predicate": "object-object"
+    ]
+]
+
+200(   / envelope /
+    201(-42)   / leaf /
+)
+
+Digest(8cc96cdb771176e835114a0f8936690b41cfed0df22d014eedd64edaea945d59)
