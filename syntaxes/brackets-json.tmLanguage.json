@@ -10,8 +10,16 @@
       "match": "\"(?:[^\"\\\\]|\\\\.)*\""
     },
     {
+      "name": "string.quoted.single.json",
+      "match": "'(?:[^'\\\\]|\\\\.)*'"
+    },
+    {
       "name": "constant.numeric.json",
       "match": "-?(?:0|[1-9]\\d*)(?:\\.\\d+)?(?:[eE][+-]?\\d+)?"
+    },
+    {
+      "name": "constant.language.json",
+      "match": "\\b(?:true|false|null)\\b"
     }
   ]
 }
