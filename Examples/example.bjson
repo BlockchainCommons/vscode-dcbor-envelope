@@ -1,0 +1,15 @@
+"Quoted string"
+1234.0
+["A", 32, "B"]
+[[["Nested", "Array"]]]
+{"key": "value", "number": 42, "boolean": true, "nullValue": null}
+100("Hello")
+true, false, null
+'single quoted string' 123.45
+
+"Alice" [
+    "knows": "Bob"
+]
+
+h'123'
+bareWord

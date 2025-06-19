@@ -17,7 +17,7 @@
     },
     {
       "scope": "punctuation.separator.json",
-      "settings": { "foreground": "#C586C0" }
+      "settings": { "foreground": "#acfd0a" }
     },
     {
       "scope": "punctuation.square.brackets.json",
@@ -25,11 +25,11 @@
     },
     {
       "scope": "constant.numeric.json",
-      "settings": { "foreground": "#B5CEA8" }
+      "settings": { "foreground": "#6f97f0" }
     },
     {
       "scope": "constant.language.json",
-      "settings": { "foreground": "#569CD6" }
+      "settings": { "foreground": "#9e87d0" }
     }
   ]
 }
