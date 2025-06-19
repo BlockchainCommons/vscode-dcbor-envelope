@@ -96,3 +96,83 @@ test('tokenize hex literals', async () => {
   const scopes = tokens.map(t => t.scopes[t.scopes.length - 1]);
   expect(scopes).toContain('constant.numeric.hex.json');
 });
+
+test('tokenize at-words', async () => {
+  const grammarPath = path.join(__dirname, '..', 'syntaxes', 'brackets-json.tmLanguage.json');
+  const grammarContent = fs.readFileSync(grammarPath, 'utf8');
+  const registry = new Registry({
+    onigLib: Promise.resolve(onigLib),
+    loadGrammar: async () => JSON.parse(grammarContent)
+  });
+  const grammar = await registry.loadGrammar('source.brackets-json');
+  if (!grammar) throw new Error('Grammar failed to load');
+
+  const line = '@word';
+  const { tokens } = grammar.tokenizeLine(line, INITIAL);
+  const scopes = tokens.map(t => t.scopes[t.scopes.length - 1]);
+  expect(scopes).toContain('keyword.other.atword.json');
+});
+
+test('tokenize bare words', async () => {
+  const grammarPath = path.join(__dirname, '..', 'syntaxes', 'brackets-json.tmLanguage.json');
+  const grammarContent = fs.readFileSync(grammarPath, 'utf8');
+  const registry = new Registry({
+    onigLib: Promise.resolve(onigLib),
+    loadGrammar: async () => JSON.parse(grammarContent)
+  });
+  const grammar = await registry.loadGrammar('source.brackets-json');
+  if (!grammar) throw new Error('Grammar failed to load');
+
+  const line = 'bareWord';
+  const { tokens } = grammar.tokenizeLine(line, INITIAL);
+  const scopes = tokens.map(t => t.scopes[t.scopes.length - 1]);
+  expect(scopes).toContain('identifier.bareword.json');
+});
+
+test('tokenize inline comments', async () => {
+  const grammarPath = path.join(__dirname, '..', 'syntaxes', 'brackets-json.tmLanguage.json');
+  const grammarContent = fs.readFileSync(grammarPath, 'utf8');
+  const registry = new Registry({
+    onigLib: Promise.resolve(onigLib),
+    loadGrammar: async () => JSON.parse(grammarContent)
+  });
+  const grammar = await registry.loadGrammar('source.brackets-json');
+  if (!grammar) throw new Error('Grammar failed to load');
+
+  const line = '/ inline comment /';
+  const { tokens } = grammar.tokenizeLine(line, INITIAL);
+  const scopes = tokens.map(t => t.scopes[t.scopes.length - 1]);
+  expect(scopes).toContain('comment.block.inline.json');
+});
+
+test('tokenize end of line comments', async () => {
+  const grammarPath = path.join(__dirname, '..', 'syntaxes', 'brackets-json.tmLanguage.json');
+  const grammarContent = fs.readFileSync(grammarPath, 'utf8');
+  const registry = new Registry({
+    onigLib: Promise.resolve(onigLib),
+    loadGrammar: async () => JSON.parse(grammarContent)
+  });
+  const grammar = await registry.loadGrammar('source.brackets-json');
+  if (!grammar) throw new Error('Grammar failed to load');
+
+  const line = '# end';
+  const { tokens } = grammar.tokenizeLine(line, INITIAL);
+  const scopes = tokens.map(t => t.scopes[t.scopes.length - 1]);
+  expect(scopes).toContain('comment.line.number-sign.json');
+});
+
+test('tokenize regex literals', async () => {
+  const grammarPath = path.join(__dirname, '..', 'syntaxes', 'brackets-json.tmLanguage.json');
+  const grammarContent = fs.readFileSync(grammarPath, 'utf8');
+  const registry = new Registry({
+    onigLib: Promise.resolve(onigLib),
+    loadGrammar: async () => JSON.parse(grammarContent)
+  });
+  const grammar = await registry.loadGrammar('source.brackets-json');
+  if (!grammar) throw new Error('Grammar failed to load');
+
+  const line = '(/reg\\/ex/abc)';
+  const { tokens } = grammar.tokenizeLine(line, INITIAL);
+  const scopes = tokens.map(t => t.scopes[t.scopes.length - 1]);
+  expect(scopes).toContain('string.regexp.json');
+});
