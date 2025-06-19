@@ -2,6 +2,18 @@
   "scopeName": "source.brackets-json",
   "patterns": [
     {
+      "name": "string.regexp.json",
+      "match": "\\(\\s*/(?:[^\\\\/]|\\\\.)+/[a-zA-Z]*\\s*\\)"
+    },
+    {
+      "name": "comment.block.inline.json",
+      "match": "(?<!\\()\\/[^\\n]*?\\/(?![a-zA-Z])"
+    },
+    {
+      "name": "comment.line.number-sign.json",
+      "match": "#.*$"
+    },
+    {
       "name": "punctuation.square.brackets.json",
       "match": "\\[|\\]"
     },
@@ -28,6 +40,14 @@
     {
       "name": "constant.language.json",
       "match": "\\b(?:true|false|null)\\b"
+    },
+    {
+      "name": "keyword.other.atword.json",
+      "match": "@[A-Za-z_][A-Za-z0-9_]*"
+    },
+    {
+      "name": "identifier.bareword.json",
+      "match": "\\b[A-Za-z_][A-Za-z0-9_]*\\b"
     }
   ]
 }

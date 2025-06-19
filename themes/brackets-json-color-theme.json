@@ -30,6 +30,22 @@
     {
       "scope": "constant.language.json",
       "settings": { "foreground": "#9e87d0" }
+    },
+    {
+      "scope": "keyword.other.atword.json",
+      "settings": { "foreground": "#c586c0" }
+    },
+    {
+      "scope": "identifier.bareword.json",
+      "settings": { "foreground": "#569cd6" }
+    },
+    {
+      "scope": ["comment.line.number-sign.json", "comment.block.inline.json"],
+      "settings": { "foreground": "#606060" }
+    },
+    {
+      "scope": "string.regexp.json",
+      "settings": { "foreground": "#ce9178" }
     }
   ]
 }
