@@ -25,14 +25,21 @@
         "configuration": "./language-configuration.json"
       }
     ],
-    "grammars": [
-      {
-        "language": "brackets-json",
-        "scopeName": "source.brackets-json",
-        "path": "./syntaxes/brackets-json.tmLanguage.json"
-      }
-    ]
-  },
+      "grammars": [
+        {
+          "language": "brackets-json",
+          "scopeName": "source.brackets-json",
+          "path": "./syntaxes/brackets-json.tmLanguage.json"
+        }
+      ],
+      "themes": [
+        {
+          "label": "Brackets JSON Theme",
+          "uiTheme": "vs-dark",
+          "path": "./themes/brackets-json-color-theme.json"
+        }
+      ]
+    },
   "devDependencies": {
     "@types/jest": "^29.0.0",
     "@types/vscode": "^1.75.0",

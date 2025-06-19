@@ -6,6 +6,14 @@
       "match": "\\[|\\]"
     },
     {
+      "name": "punctuation.separator.json",
+      "match": "[,;:]"
+    },
+    {
+      "name": "constant.numeric.hex.json",
+      "match": "h'(?:[0-9a-fA-F]+)'"
+    },
+    {
       "name": "string.quoted.double.json",
       "match": "\"(?:[^\"\\\\]|\\\\.)*\""
     },
