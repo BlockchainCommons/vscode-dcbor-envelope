@@ -50,6 +50,14 @@
       "match": "\\b(?:true|false|null)\\b"
     },
     {
+      "name": "keyword.other.literal.json",
+      "match": "\\b(?:ELIDED|ENCRYPTED|COMPRESSED)\\b"
+    },
+    {
+      "name": "constant.other.ur.json",
+      "match": "(?i)ur:[a-z][a-z0-9-]*/[a-z]+"
+    },
+    {
       "name": "keyword.other.atword.json",
       "match": "@[A-Za-z_][A-Za-z0-9_]*"
     },
