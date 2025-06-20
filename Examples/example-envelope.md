@@ -1,8 +1,6 @@
-## Gordian Envelope Notation
+# Gordian Envelope Notation
 
 ```envelope
-# Gordian Envelope Notation Example
-
 "Alice" [
     "knows": "Bob"
 ]

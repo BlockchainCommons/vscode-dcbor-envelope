@@ -13,15 +13,15 @@
     "compile": "tsc -p ./",
     "test": "jest"
   },
-  "keywords": ["syntax", "dcbor", "envelope"],
+  "keywords": ["syntax", "dcbor", "envelope", "cbor"],
   "license": "MIT",
   "type": "commonjs",
   "contributes": {
     "languages": [
       {
         "id": "dcbor-envelope",
-        "aliases": ["dCBOR-Envelope", "dcbor", "envelope"],
-        "extensions": [".dcbor", ".envelope"],
+        "aliases": ["dCBOR-Envelope", "dcbor", "envelope", "cbor"],
+        "extensions": [".dcbor", ".envelope", ".cbor"],
         "configuration": "./language-configuration.json"
       }
     ],

@@ -6,121 +6,121 @@
         {
             "scope": "string.quoted.double.json",
             "settings": {
-                "foreground": "#A31515"
+                "foreground": "#0b631e"
             }
         },
         {
             "scope": "string.quoted.single.json",
             "settings": {
-                "foreground": "#0a7c33"
+                "foreground": "#529721"
             }
         },
         {
             "scope": "string.quoted.prefixed.json, string.quoted.prefixed.multiline.json, entity.name.tag.json",
             "settings": {
-                "foreground": "#098658"
+                "foreground": "#0D7D65"
             }
         },
         {
             "scope": "constant.numeric.json, constant.numeric.special.json, constant.numeric.hex.json, constant.numeric.binary.json, constant.numeric.octal.json",
             "settings": {
-                "foreground": "#1750EB"
+                "foreground": "#0E76B0"
             }
         },
         {
             "scope": "constant.numeric.date.json",
             "settings": {
-                "foreground": "#098658"
+                "foreground": "#0D7D65"
             }
         },
         {
             "scope": "punctuation.separator.json",
             "settings": {
-                "foreground": "#7d9600"
+                "foreground": "#0E76B0"
             }
         },
         {
             "scope": "punctuation.square.brackets.json",
             "settings": {
-                "foreground": "#7d6600"
+                "foreground": "#333333"
             }
         },
         {
             "scope": "punctuation.angle.brackets.double.json",
             "settings": {
-                "foreground": "#7d6600"
+                "foreground": "#886200"
             }
         },
         {
             "scope": "punctuation.angle.brackets.guillemet.json",
             "settings": {
-                "foreground": "#7d6600"
+                "foreground": "#886200"
             }
         },
         {
             "scope": "punctuation.angle.brackets.floral.json",
             "settings": {
-                "foreground": "#7d6600"
+                "foreground": "#886200"
             }
         },
         {
             "scope": "meta.embedded.block.dcbor punctuation.square.brackets.json, meta.embedded.block.envelope punctuation.square.brackets.json",
             "settings": {
-                "foreground": "#7d6600"
+                "foreground": "#886200"
             }
         },
         {
             "scope": "meta.embedded.block.dcbor punctuation.curly.braces.json, meta.embedded.block.envelope punctuation.curly.braces.json",
             "settings": {
-                "foreground": "#7d6600"
+                "foreground": "#886200"
             }
         },
         {
             "scope": "meta.embedded.block.dcbor punctuation.parenthesis.json, meta.embedded.block.envelope punctuation.parenthesis.json",
             "settings": {
-                "foreground": "#7d6600"
+                "foreground": "#886200"
             }
         },
         {
             "scope": "meta.embedded.block.dcbor punctuation.angle.brackets.double.json, meta.embedded.block.envelope punctuation.angle.brackets.double.json",
             "settings": {
-                "foreground": "#7d6600"
+                "foreground": "#886200"
             }
         },
         {
             "scope": "meta.embedded.block.dcbor punctuation.angle.brackets.guillemet.json, meta.embedded.block.envelope punctuation.angle.brackets.guillemet.json",
             "settings": {
-                "foreground": "#7d6600"
+                "foreground": "#886200"
             }
         },
         {
             "scope": "meta.embedded.block.dcbor punctuation.angle.brackets.floral.json, meta.embedded.block.envelope punctuation.angle.brackets.floral.json",
             "settings": {
-                "foreground": "#7d6600"
+                "foreground": "#886200"
             }
         },
         {
             "scope": "constant.language.json",
             "settings": {
-                "foreground": "#5e3e8f"
+                "foreground": "#5D3CA9"
             }
         },
         {
             "scope": "keyword.other.literal.json",
             "settings": {
-                "foreground": "#9b2424"
+                "foreground": "#A13030"
             }
         },
         {
             "scope": "constant.other.ur.json",
             "settings": {
-                "foreground": "#3c6341"
+                "foreground": "#3D724C"
             }
         },
         {
             "scope": "identifier.bareword.json",
             "settings": {
-                "foreground": "#0000ff"
+                "foreground": "#9e5c1a"
             }
         },
         {
@@ -130,7 +130,7 @@
                 "comment.line.ellipsis.json"
             ],
             "settings": {
-                "foreground": "#707070"
+                "foreground": "#979696"
             }
         }
     ]

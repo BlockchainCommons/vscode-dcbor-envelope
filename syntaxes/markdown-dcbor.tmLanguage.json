@@ -7,6 +7,9 @@
     },
     {
       "include": "#markdown-envelope-code-block"
+    },
+    {
+      "include": "#markdown-cbor-code-block"
     }
   ],
   "repository": {
@@ -32,6 +35,21 @@
       "beginCaptures": {
         "1": {
           "name": "entity.name.tag.envelope"
+        }
+      },
+      "patterns": [
+        {
+          "include": "source.dcbor-envelope"
+        }
+      ]
+    },
+    "markdown-cbor-code-block": {
+      "name": "meta.embedded.block.cbor",
+      "begin": "(?<=[`~])\\s*(cbor)\\s*$",
+      "end": "(^|\\G)\\s*[`~]{3,}\\s*$",
+      "beginCaptures": {
+        "1": {
+          "name": "entity.name.tag.cbor"
         }
       },
       "patterns": [
