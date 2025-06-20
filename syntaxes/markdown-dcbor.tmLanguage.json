@@ -1,0 +1,44 @@
+{
+  "scopeName": "markdown.dcbor.codeblock",
+  "injectionSelector": "L:markup.fenced_code.block.markdown",
+  "patterns": [
+    {
+      "include": "#markdown-dcbor-code-block"
+    },
+    {
+      "include": "#markdown-envelope-code-block"
+    }
+  ],
+  "repository": {
+    "markdown-dcbor-code-block": {
+      "name": "meta.embedded.block.dcbor",
+      "begin": "(?<=[`~])\\s*(dcbor)\\s*$",
+      "end": "(^|\\G)\\s*[`~]{3,}\\s*$",
+      "beginCaptures": {
+        "1": {
+          "name": "entity.name.tag.dcbor"
+        }
+      },
+      "patterns": [
+        {
+          "include": "source.dcbor-envelope"
+        }
+      ]
+    },
+    "markdown-envelope-code-block": {
+      "name": "meta.embedded.block.envelope",
+      "begin": "(?<=[`~])\\s*(envelope)\\s*$",
+      "end": "(^|\\G)\\s*[`~]{3,}\\s*$",
+      "beginCaptures": {
+        "1": {
+          "name": "entity.name.tag.envelope"
+        }
+      },
+      "patterns": [
+        {
+          "include": "source.dcbor-envelope"
+        }
+      ]
+    }
+  }
+}

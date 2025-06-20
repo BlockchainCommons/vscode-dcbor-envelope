@@ -30,6 +30,11 @@
           "language": "dcbor-envelope",
           "scopeName": "source.dcbor-envelope",
           "path": "./syntaxes/dcbor-envelope.tmLanguage.json"
+        },
+        {
+          "injectTo": ["text.html.markdown"],
+          "scopeName": "markdown.dcbor.codeblock",
+          "path": "./syntaxes/markdown-dcbor.tmLanguage.json"
         }
       ],
       "themes": [
