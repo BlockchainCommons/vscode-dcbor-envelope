@@ -5,11 +5,11 @@
   "tokenColors": [
     {
       "scope": "string.quoted.double.json",
-      "settings": { "foreground": "#CE9178" }
+      "settings": { "foreground": "#8ABE5E" }
     },
     {
       "scope": "string.quoted.single.json",
-      "settings": { "foreground": "#0ed360" }
+      "settings": { "foreground": "#D6E893" }
     },
     {
       "scope": "constant.numeric.hex.json",
@@ -17,7 +17,7 @@
     },
     {
       "scope": "constant.numeric.json",
-      "settings": { "foreground": "#6f97f0" }
+      "settings": { "foreground": "#34A5DA" }
     },
     {
       "scope": "constant.numeric.date.json",
@@ -25,7 +25,7 @@
     },
     {
       "scope": "punctuation.separator.json",
-      "settings": { "foreground": "#acfd0a" }
+      "settings": { "foreground": "#34A5DA" }
     },
     {
       "scope": "punctuation.square.brackets.json",
@@ -33,15 +33,15 @@
     },
     {
       "scope": "meta.embedded.block.dcbor punctuation.square.brackets.json, meta.embedded.block.envelope punctuation.square.brackets.json",
-      "settings": { "foreground": "#FFFF00" }
+      "settings": { "foreground": "#ffff00" }
     },
     {
       "scope": "meta.embedded.block.dcbor punctuation.curly.braces.json, meta.embedded.block.envelope punctuation.curly.braces.json",
-      "settings": { "foreground": "#FFFF00" }
+      "settings": { "foreground": "#ffff00" }
     },
     {
       "scope": "meta.embedded.block.dcbor punctuation.parenthesis.json, meta.embedded.block.envelope punctuation.parenthesis.json",
-      "settings": { "foreground": "#FFFF00" }
+      "settings": { "foreground": "#ffff00" }
     },
     {
       "scope": "constant.language.json",
@@ -61,7 +61,7 @@
     },
     {
       "scope": "identifier.bareword.json",
-      "settings": { "foreground": "#569cd6" }
+      "settings": { "foreground": "#FDCB56" }
     },
     {
       "scope": ["comment.line.number-sign.json", "comment.block.inline.json"],
