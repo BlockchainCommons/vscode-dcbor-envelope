@@ -50,6 +50,10 @@
       "match": "-?(?:0|[1-9]\\d*)(?:\\.\\d+)?(?:[eE][+-]?\\d+)?"
     },
     {
+      "name": "constant.numeric.json",
+      "match": "\\b((-?Infinity)|NaN)\\b"
+    },
+    {
       "name": "constant.language.json",
       "match": "\\b(?:true|false|null|undefined)\\b"
     },
