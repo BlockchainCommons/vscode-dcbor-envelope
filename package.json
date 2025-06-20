@@ -58,16 +58,6 @@
           "uiTheme": "vs",
           "path": "./themes/dcbor-envelope-light-color-theme.json"
         }
-      ],
-      "commands": [
-        {
-          "command": "dcbor-envelope.applyDarkTheme",
-          "title": "dCBOR Envelope: Apply Dark Theme"
-        },
-        {
-          "command": "dcbor-envelope.applyLightTheme",
-          "title": "dCBOR Envelope: Apply Light Theme"
-        }
       ]
     },
   "devDependencies": {

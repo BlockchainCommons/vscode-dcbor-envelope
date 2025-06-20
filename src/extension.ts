@@ -28,27 +28,6 @@ export function activate(context: vscode.ExtensionContext) {
   });
   context.subscriptions.push(tokenProvider);
 
-  // Register a command to manually apply the dCBOR theme if desired
-  const applyDarkThemeCommand = vscode.commands.registerCommand('dcbor-envelope.applyDarkTheme', async () => {
-    try {
-      await vscode.workspace.getConfiguration().update('workbench.colorTheme', 'dCBOR Envelope Dark', vscode.ConfigurationTarget.Global);
-      vscode.window.showInformationMessage('dCBOR Envelope Dark theme applied successfully!');
-    } catch (error) {
-      vscode.window.showErrorMessage(`Failed to apply dCBOR Envelope Dark theme: ${error}`);
-    }
-  });
-
-  const applyLightThemeCommand = vscode.commands.registerCommand('dcbor-envelope.applyLightTheme', async () => {
-    try {
-      await vscode.workspace.getConfiguration().update('workbench.colorTheme', 'dCBOR Envelope Light', vscode.ConfigurationTarget.Global);
-      vscode.window.showInformationMessage('dCBOR Envelope Light theme applied successfully!');
-    } catch (error) {
-      vscode.window.showErrorMessage(`Failed to apply dCBOR Envelope Light theme: ${error}`);
-    }
-  });
-
-  context.subscriptions.push(applyDarkThemeCommand, applyLightThemeCommand);
-
   // Listen for theme changes and update accordingly
   context.subscriptions.push(
     vscode.window.onDidChangeActiveColorTheme(() => {
