@@ -13,12 +13,25 @@ The extension highlights various syntax elements including:
 - Arrays and maps
 - Special constants and keywords
 
-### Multi-line String Example
+### Multi-line String Examples
 
 ```dcbor
 h'68 65 6c /doubled l!/ 6c 6f /hello/
 20 /space/
 77 6f 72 6c 64' /world/
+```
+
+The extension provides consistent coloration for:
+- Prefixed strings (entire string including prefix has the same color)
+- Inline comments within multiline strings are highlighted differently
+
+Examples from RFC8610:
+
+```dcbor
+h'48656c6c6f20776f726c64'
+h'48 65 6c 6c 6f 20 77 6f 72 6c 64'
+h'48 65 6c 6c 6f
+20 77 6f 72 6c 64'
 ```
 
 ## VS Code development deployment

@@ -16,7 +16,7 @@
             }
         },
         {
-            "scope": "string.quoted.prefixed.json",
+            "scope": "string.quoted.prefixed.json, string.quoted.prefixed.multiline.json, entity.name.tag.json",
             "settings": {
                 "foreground": "#4EC9B0"
             }

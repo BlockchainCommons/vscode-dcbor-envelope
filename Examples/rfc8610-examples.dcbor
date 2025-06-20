@@ -1,0 +1,19 @@
+# Examples from Appendix G of RFC8610
+# https://www.rfc-editor.org/rfc/rfc8610#Appendix-G
+
+h'48656c6c6f20776f726c64'
+
+# The same string with spaces
+h'48 65 6c 6c 6f 20 77 6f 72 6c 64'
+
+# Multiline hex string example
+h'48 65 6c 6c 6f /hello/
+20 /space/
+77 6f 72 6c 64' /world/
+
+# More examples from RFC8610
+h'4 86 56c 6c6f
+20776 f726c64'
+
+# Test with different prefixes
+b64'SGVsbG8gV29ybGQ='

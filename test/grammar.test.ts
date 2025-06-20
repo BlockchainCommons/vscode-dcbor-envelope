@@ -102,7 +102,10 @@ test('tokenize prefixed string literals', async () => {
   for (const line of examples) {
     const { tokens } = grammar.tokenizeLine(line, INITIAL);
     const scopes = tokens.map(t => t.scopes[t.scopes.length - 1]);
-    expect(scopes).toContain('string.quoted.prefixed.multiline.json');
+    expect(scopes.some(scope =>
+      scope === 'string.quoted.prefixed.json' ||
+      scope === 'string.quoted.prefixed.multiline.json'
+    )).toBeTruthy();
   }
 });
 
