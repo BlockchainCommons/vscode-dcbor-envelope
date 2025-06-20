@@ -17,6 +17,7 @@
       "name": "meta.embedded.block.dcbor",
       "begin": "(?<=[`~])\\s*(dcbor)\\s*$",
       "end": "(^|\\G)\\s*[`~]{3,}\\s*$",
+      "contentName": "source.dcbor-envelope",
       "beginCaptures": {
         "1": {
           "name": "entity.name.tag.dcbor"
@@ -32,6 +33,7 @@
       "name": "meta.embedded.block.envelope",
       "begin": "(?<=[`~])\\s*(envelope)\\s*$",
       "end": "(^|\\G)\\s*[`~]{3,}\\s*$",
+      "contentName": "source.dcbor-envelope",
       "beginCaptures": {
         "1": {
           "name": "entity.name.tag.envelope"
@@ -47,6 +49,7 @@
       "name": "meta.embedded.block.cbor",
       "begin": "(?<=[`~])\\s*(cbor)\\s*$",
       "end": "(^|\\G)\\s*[`~]{3,}\\s*$",
+      "contentName": "source.dcbor-envelope",
       "beginCaptures": {
         "1": {
           "name": "entity.name.tag.cbor"

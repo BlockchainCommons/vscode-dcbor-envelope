@@ -4,7 +4,7 @@ import { ThemeManager } from './themeManager';
 export function activate(context: vscode.ExtensionContext) {
   console.log('dCBOR-Envelope extension is active');
 
-  // Initialize theme manager
+  // Initialize theme manager but don't apply theme globally
   const themeManager = ThemeManager.getInstance(context);
 
   // Register language configuration for dcbor and envelope files
@@ -19,12 +19,25 @@ export function activate(context: vscode.ExtensionContext) {
     ]
   });
 
-  // When creating decorations or syntax highlights, get colors from the theme manager
-  // For example:
-  // const hexColor = themeManager.getColorForScope('constant.numeric.hex.dcbor');
-  // const hexDecoration = vscode.window.createTextEditorDecorationType({
-  //   color: hexColor
-  // });
+  // Register markdown token provider to enhance the markdown code blocks
+  const markdownSelector = { language: 'markdown', scheme: '*' };
+  const tokenProvider = vscode.languages.registerDocumentHighlightProvider(markdownSelector, {
+    provideDocumentHighlights(document, position, token) {
+      return [];  // Just to enable the feature
+    }
+  });
+  context.subscriptions.push(tokenProvider);
+
+  // Register a command to manually apply the dCBOR theme if desired
+  const applyDarkThemeCommand = vscode.commands.registerCommand('dcbor-envelope.applyDarkTheme', () => {
+    vscode.workspace.getConfiguration().update('workbench.colorTheme', 'dCBOR Envelope Dark', vscode.ConfigurationTarget.Global);
+  });
+
+  const applyLightThemeCommand = vscode.commands.registerCommand('dcbor-envelope.applyLightTheme', () => {
+    vscode.workspace.getConfiguration().update('workbench.colorTheme', 'dCBOR Envelope Light', vscode.ConfigurationTarget.Global);
+  });
+
+  context.subscriptions.push(applyDarkThemeCommand, applyLightThemeCommand);
 
   // Listen for theme changes and update accordingly
   context.subscriptions.push(

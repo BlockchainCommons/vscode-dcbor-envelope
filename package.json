@@ -2,7 +2,7 @@
   "name": "dcbor-envelope",
   "displayName": "dCBOR-Envelope",
   "description": "Syntax highlighting for dCBOR envelopes",
-  "version": "0.0.6",
+  "version": "0.1.0",
   "publisher": "local",
   "repository": {
     "type": "git",
@@ -42,7 +42,8 @@
           "embeddedLanguages": {
             "meta.embedded.block.dcbor": "dcbor-envelope",
             "meta.embedded.block.envelope": "dcbor-envelope",
-            "meta.embedded.block.cbor": "dcbor-envelope"
+            "meta.embedded.block.cbor": "dcbor-envelope",
+            "source.dcbor-envelope": "dcbor-envelope"
           }
         }
       ],
@@ -56,6 +57,16 @@
           "label": "dCBOR Envelope Light",
           "uiTheme": "vs",
           "path": "./themes/dcbor-envelope-light-color-theme.json"
+        }
+      ],
+      "commands": [
+        {
+          "command": "dcbor-envelope.applyDarkTheme",
+          "title": "dCBOR Envelope: Apply Dark Theme"
+        },
+        {
+          "command": "dcbor-envelope.applyLightTheme",
+          "title": "dCBOR Envelope: Apply Light Theme"
         }
       ]
     },

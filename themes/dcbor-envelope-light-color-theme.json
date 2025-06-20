@@ -3,8 +3,85 @@
     "type": "light",
     "colors": {},
     "tokenColors": [
+        // Standard language scopes for JSON, C, and others
         {
-            "scope": "string.quoted.double.dcbor",
+            "scope": [
+                "string.quoted.double",
+                "meta.embedded.block string.quoted.double",
+                "source string.quoted.double"
+            ],
+            "settings": {
+                "foreground": "#A31515"
+            }
+        },
+        {
+            "scope": [
+                "string.quoted.single",
+                "meta.embedded.block string.quoted.single",
+                "source string.quoted.single"
+            ],
+            "settings": {
+                "foreground": "#A31515"
+            }
+        },
+        {
+            "scope": [
+                "constant.numeric",
+                "meta.embedded.block constant.numeric",
+                "source constant.numeric"
+            ],
+            "settings": {
+                "foreground": "#098658"
+            }
+        },
+        {
+            "scope": [
+                "entity.name.function",
+                "meta.embedded.block entity.name.function",
+                "source entity.name.function"
+            ],
+            "settings": {
+                "foreground": "#795E26"
+            }
+        },
+        {
+            "scope": [
+                "keyword",
+                "meta.embedded.block keyword",
+                "source keyword"
+            ],
+            "settings": {
+                "foreground": "#0000FF"
+            }
+        },
+        {
+            "scope": [
+                "comment",
+                "meta.embedded.block comment",
+                "source comment"
+            ],
+            "settings": {
+                "foreground": "#008000"
+            }
+        },
+        {
+            "scope": [
+                "storage.type",
+                "meta.embedded.block storage.type",
+                "source storage.type"
+            ],
+            "settings": {
+                "foreground": "#0000FF"
+            }
+        },
+        // Your custom scopes for dcbor-envelope
+        {
+            "scope": [
+                "string.quoted.double.dcbor",
+                "meta.embedded.block.envelope string.quoted.double",
+                "meta.embedded.block.dcbor string.quoted.double",
+                "meta.embedded.block.cbor string.quoted.double"
+            ],
             "settings": {
                 "foreground": "#0b631e"
             }

@@ -98,12 +98,12 @@ npm install -g @vscode/vsce
 vsce package
 ```
 
-This will create a file like `vscode-dcbor-envelope-0.1.0.vsix` in your project directory.
+This will create a file like `dcbor-envelope-0.1.0.vsix` in your project directory.
 
-2. Install the VSIX file in your main VS Code:
+1. Install the VSIX file in your main VS Code:
 
 ```bash
-code --install-extension vscode-dcbor-envelope-0.1.0.vsix
+code --install-extension dcbor-envelope-0.1.0.vsix
 ```
 
 Alternatively, you can install it from within VS Code:
@@ -126,7 +126,7 @@ cd ~/.vscode/extensions
 2. Create a symlink to your extension directory:
 
 ```bash
-ln -s /Users/wolf/Dropbox/DevProjects/BlockchainCommons/vscode-dcbor-envelope vscode-dcbor-envelope
+ln -s /Users/wolf/Dropbox/DevProjects/BlockchainCommons/dcbor-envelope dcbor-envelope
 ```
 
 3. Restart VS Code completely
@@ -143,3 +143,21 @@ After installing:
 If you need to make changes, update your extension and either:
 - Repackage and reinstall (Option 1)
 - Just restart VS Code if using symlinks (Option 2)
+
+### Theme Usage
+
+This extension comes with specialized themes for dCBOR and Envelope files, but they're not automatically applied to prevent affecting your entire VS Code color scheme.
+
+#### Option 1: Use with your current theme (Recommended)
+
+The syntax highlighting will work with any VS Code theme. The extension's language grammar provides proper syntax highlighting while respecting your current VS Code theme.
+
+#### Option 2: Apply dedicated themes
+
+If you want to use the dedicated dCBOR/Envelope themes:
+
+1. Open the Command Palette (`Cmd+Shift+P`)
+2. Type "dCBOR Envelope: Apply Dark Theme" or "dCBOR Envelope: Apply Light Theme"
+3. To revert to your previous theme, open the Command Palette and select your preferred theme
+
+**Note:** Applying the extension's themes will change your entire VS Code color theme, not just dCBOR/Envelope files.
