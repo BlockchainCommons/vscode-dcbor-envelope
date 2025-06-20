@@ -22,6 +22,18 @@
       "match": "\\(|\\)"
     },
     {
+      "name": "punctuation.angle.brackets.double.json",
+      "match": "<<|>>"
+    },
+    {
+      "name": "punctuation.angle.brackets.guillemet.json",
+      "match": "«|»"
+    },
+    {
+      "name": "punctuation.angle.brackets.floral.json",
+      "match": "❰|❱"
+    },
+    {
       "name": "punctuation.separator.json",
       "match": "[,;:]"
     },

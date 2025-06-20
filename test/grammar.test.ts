@@ -49,6 +49,54 @@ test('tokenize single quoted strings', async () => {
   expect(scopes).toContain('string.quoted.single.json');
 });
 
+test('tokenize double angle brackets', async () => {
+  const grammarPath = path.join(__dirname, '..', 'syntaxes', 'dcbor-envelope.tmLanguage.json');
+  const grammarContent = fs.readFileSync(grammarPath, 'utf8');
+  const registry = new Registry({
+    onigLib: Promise.resolve(onigLib),
+    loadGrammar: async () => JSON.parse(grammarContent)
+  });
+  const grammar = await registry.loadGrammar('source.dcbor-envelope');
+  if (!grammar) throw new Error('Grammar failed to load');
+
+  const line = "<<test>>";
+  const { tokens } = grammar.tokenizeLine(line, INITIAL);
+  const scopes = tokens.map(t => t.scopes[t.scopes.length - 1]);
+  expect(scopes).toContain('punctuation.angle.brackets.double.json');
+});
+
+test('tokenize guillemet brackets', async () => {
+  const grammarPath = path.join(__dirname, '..', 'syntaxes', 'dcbor-envelope.tmLanguage.json');
+  const grammarContent = fs.readFileSync(grammarPath, 'utf8');
+  const registry = new Registry({
+    onigLib: Promise.resolve(onigLib),
+    loadGrammar: async () => JSON.parse(grammarContent)
+  });
+  const grammar = await registry.loadGrammar('source.dcbor-envelope');
+  if (!grammar) throw new Error('Grammar failed to load');
+
+  const line = "«test»";
+  const { tokens } = grammar.tokenizeLine(line, INITIAL);
+  const scopes = tokens.map(t => t.scopes[t.scopes.length - 1]);
+  expect(scopes).toContain('punctuation.angle.brackets.guillemet.json');
+});
+
+test('tokenize floral brackets', async () => {
+  const grammarPath = path.join(__dirname, '..', 'syntaxes', 'dcbor-envelope.tmLanguage.json');
+  const grammarContent = fs.readFileSync(grammarPath, 'utf8');
+  const registry = new Registry({
+    onigLib: Promise.resolve(onigLib),
+    loadGrammar: async () => JSON.parse(grammarContent)
+  });
+  const grammar = await registry.loadGrammar('source.dcbor-envelope');
+  if (!grammar) throw new Error('Grammar failed to load');
+
+  const line = "❰test❱";
+  const { tokens } = grammar.tokenizeLine(line, INITIAL);
+  const scopes = tokens.map(t => t.scopes[t.scopes.length - 1]);
+  expect(scopes).toContain('punctuation.angle.brackets.floral.json');
+});
+
 test('tokenize boolean and null literals', async () => {
   const grammarPath = path.join(__dirname, '..', 'syntaxes', 'dcbor-envelope.tmLanguage.json');
   const grammarContent = fs.readFileSync(grammarPath, 'utf8');

@@ -42,7 +42,25 @@
         {
             "scope": "punctuation.square.brackets.json",
             "settings": {
-                "foreground": "#000000"
+                "foreground": "#7d6600"
+            }
+        },
+        {
+            "scope": "punctuation.angle.brackets.double.json",
+            "settings": {
+                "foreground": "#7d6600"
+            }
+        },
+        {
+            "scope": "punctuation.angle.brackets.guillemet.json",
+            "settings": {
+                "foreground": "#7d6600"
+            }
+        },
+        {
+            "scope": "punctuation.angle.brackets.floral.json",
+            "settings": {
+                "foreground": "#7d6600"
             }
         },
         {
@@ -59,6 +77,24 @@
         },
         {
             "scope": "meta.embedded.block.dcbor punctuation.parenthesis.json, meta.embedded.block.envelope punctuation.parenthesis.json",
+            "settings": {
+                "foreground": "#7d6600"
+            }
+        },
+        {
+            "scope": "meta.embedded.block.dcbor punctuation.angle.brackets.double.json, meta.embedded.block.envelope punctuation.angle.brackets.double.json",
+            "settings": {
+                "foreground": "#7d6600"
+            }
+        },
+        {
+            "scope": "meta.embedded.block.dcbor punctuation.angle.brackets.guillemet.json, meta.embedded.block.envelope punctuation.angle.brackets.guillemet.json",
+            "settings": {
+                "foreground": "#7d6600"
+            }
+        },
+        {
+            "scope": "meta.embedded.block.dcbor punctuation.angle.brackets.floral.json, meta.embedded.block.envelope punctuation.angle.brackets.floral.json",
             "settings": {
                 "foreground": "#7d6600"
             }
