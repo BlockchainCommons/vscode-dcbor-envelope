@@ -14,13 +14,15 @@ Filename extensions supported:
 - `.dcbor`
 - `.envelope`
 
-Opening a file with any of these extensions will apply the same syntax highlighting.
+Opening a file with any of these extensions will apply the same syntax highlighting, and blocks of code in these formats can be collapsed in the editor.
 
 Markdown code fences supported:
 
 - ` ```cbor`
 - ` ```dcbor`
 - ` ```envelope`
+
+Blocks of code in Markdown will be highlighted, but cannot be collapsed in the editor.
 
 # Color Themes
 
