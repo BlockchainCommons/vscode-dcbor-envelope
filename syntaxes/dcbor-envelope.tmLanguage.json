@@ -1,52 +1,52 @@
 {
   "scopeName": "source.dcbor-envelope",
-  "patterns": [
+    "patterns": [
     {
-      "name": "comment.block.inline.dcbor",
+      "name": "comment.block.inline.dcbor comment.block",
       "match": "(?<!\\()\\/[^\\n]*?\\/(?![a-zA-Z])"
     },
     {
-      "name": "comment.line.number-sign.dcbor",
+      "name": "comment.line.number-sign.dcbor comment.line.number-sign",
       "match": "#.*$"
     },
     {
-      "name": "comment.line.ellipsis.dcbor",
+      "name": "comment.line.ellipsis.dcbor comment.line",
       "match": "\\.\\.\\.|…"
     },
     {
-      "name": "punctuation.square.brackets.dcbor",
+      "name": "punctuation.square.brackets.dcbor punctuation.definition.brackets",
       "match": "\\[|\\]"
     },
     {
-      "name": "punctuation.curly.braces.dcbor",
+      "name": "punctuation.curly.braces.dcbor punctuation.definition.braces",
       "match": "\\{|\\}"
     },
     {
-      "name": "punctuation.parenthesis.dcbor",
+      "name": "punctuation.parenthesis.dcbor punctuation.definition.parenthesis",
       "match": "\\(|\\)"
     },
     {
-      "name": "punctuation.angle.brackets.double.dcbor",
+      "name": "punctuation.angle.brackets.double.dcbor punctuation.definition.angle",
       "match": "<<|>>"
     },
     {
-      "name": "punctuation.angle.brackets.guillemet.dcbor",
+      "name": "punctuation.angle.brackets.guillemet.dcbor punctuation.definition.angle",
       "match": "«|»"
     },
     {
-      "name": "punctuation.angle.brackets.floral.dcbor",
+      "name": "punctuation.angle.brackets.floral.dcbor punctuation.definition.angle",
       "match": "❰|❱"
     },
     {
-      "name": "punctuation.separator.dcbor",
+      "name": "punctuation.separator.dcbor punctuation.separator",
       "match": "[,;:]"
     },
     {
-      "name": "string.quoted.prefixed.dcbor",
+      "name": "string.quoted.prefixed.dcbor string.quoted.single",
       "match": "[a-zA-Z]?[a-zA-Z0-9]+'(?:[^'\\\\]|\\\\.)*'"
     },
     {
-      "name": "string.quoted.prefixed.multiline.dcbor",
+      "name": "string.quoted.prefixed.multiline.dcbor string.quoted.single",
       "begin": "[a-zA-Z]?[a-zA-Z0-9]+'",
       "end": "'",
       "patterns": [
@@ -61,63 +61,63 @@
       ]
     },
     {
-      "name": "string.quoted.double.dcbor",
+      "name": "string.quoted.double.dcbor string.quoted.double",
       "match": "\"(?:[^\"\\\\]|\\\\.)*\""
     },
     {
-      "name": "string.quoted.single.dcbor",
+      "name": "string.quoted.single.dcbor string.quoted.single",
       "match": "'(?:[^'\\\\]|\\\\.)*'"
     },
     {
-      "name": "constant.numeric.date.dcbor",
+      "name": "constant.numeric.date.dcbor constant.numeric",
       "match": "\\b\\d{4}-\\d{2}-\\d{2}(?:T\\d{2}:\\d{2}:\\d{2}Z?)?\\b"
     },
     {
-      "name": "constant.numeric.hex.dcbor",
+      "name": "constant.numeric.hex.dcbor constant.numeric.hex",
       "match": "\\b0[xX]([0-9a-fA-F]+)(\\.[0-9a-fA-F]+)?[pP][+-]?[0-9]+\\b"
     },
     {
-      "name": "constant.numeric.hex.dcbor",
+      "name": "constant.numeric.hex.dcbor constant.numeric.hex",
       "match": "\\b0[xX][0-9a-fA-F]+\\b"
     },
     {
-      "name": "constant.numeric.binary.dcbor",
+      "name": "constant.numeric.binary.dcbor constant.numeric",
       "match": "\\b0[bB][01]+\\b"
     },
     {
-      "name": "constant.numeric.octal.dcbor",
+      "name": "constant.numeric.octal.dcbor constant.numeric.octal",
       "match": "\\b0[oO][0-7]+\\b"
     },
     {
-      "name": "constant.numeric.dcbor",
+      "name": "constant.numeric.dcbor constant.numeric",
       "match": "\\b[0-9]*[a-fA-F][0-9a-fA-F]*\\b"
     },
     {
-      "name": "constant.numeric.special.dcbor",
+      "name": "constant.numeric.special.dcbor constant.numeric",
       "match": "-Infinity|Infinity|NaN"
     },
     {
-      "name": "constant.numeric.dcbor",
+      "name": "constant.numeric.dcbor constant.numeric",
       "match": "-?(?:0|[1-9]\\d*)(?:\\.\\d+)?(?:[eE][+-]?\\d+)?"
     },
     {
-      "name": "constant.language.dcbor",
+      "name": "constant.language.dcbor constant.language",
       "match": "\\b(?:true|false|null|undefined|simple)\\b"
     },
     {
-      "name": "keyword.other.envcase.dcbor",
+      "name": "keyword.other.envcase.dcbor keyword.other",
       "match": "\\b(?:ELIDED|ENCRYPTED|COMPRESSED|NODE|WRAPPED|ASSERTION)\\b"
     },
     {
-      "name": "constant.other.ur.dcbor",
+      "name": "constant.other.ur.dcbor constant.other",
       "match": "(?i)ur:[a-z][a-z0-9-]*/[a-z]+"
     },
     {
-      "name": "constant.other.unit.dcbor",
+      "name": "constant.other.unit.dcbor constant.other",
       "match": "\\bUnit\\b"
     },
     {
-      "name": "identifier.bareword.dcbor",
+      "name": "identifier.bareword.dcbor identifier",
       "match": "\\b[A-Za-z_][A-Za-z0-9_-]*\\b"
     }
   ]
