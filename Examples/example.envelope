@@ -1,3 +1,5 @@
+# Gordian Envelope Notation Example
+
 "Alice" [
     "knows": "Bob"
 ]
@@ -114,6 +116,8 @@ Digest(26d05af5) [
     'note': "Signed by Employer Corp."
     'signed': Signature
 ]
+
+COMPRESSED
 
 ENCRYPTED [
     'hasRecipient': SealedMessage

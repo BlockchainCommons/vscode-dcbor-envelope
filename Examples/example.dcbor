@@ -1,3 +1,5 @@
+# dCBOR Diagnostic Notation Example
+
 # string
 "Quoted string"
 
@@ -5,23 +7,25 @@
 20
 1234.0
 
-# prefixed strings (various styles)
+# binary data
 h'cafebabe'
-b'binary data'
-text'This is some text with an escaped \\'quote\\' inside'
-myPrefix'custom prefixed string'
+b64'AQIDBAUGBwgJCg=='
 
 # tagged value
 100("Hello")
 date(2023-10-01)
+tag-name("hello")
 
 # UR literal
 ur:envelope/tpsotaaodnoyadgdjlssmkcklgoskseodnyteofwwfylkiftaydpdsjz
+ur:date/cyisdadmlasgtapttl
 
 # known values
 '123' / known value /
 'knownValue' / named known value /
 '' / the Unit known value /
+'0'
+Unit
 
 # simple values
 true, false, null
@@ -94,3 +98,73 @@ true, false, null
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
     }
 )
+
+# Examples from RFC8949
+# https://www.rfc-editor.org/rfc/rfc8949.html#name-diagnostic-notation
+
+0("2013-03-21T20:04:00Z")
+
+1(1363896240)
+
+true
+false
+null
+undefined # not valid in dCBOR, but included for completeness
+
+0
+100.0
+3.14159
+-42
+-0.1
+Infinity
+-Infinity
+NaN
+
+# Examples from EDN I-D
+# https://www.ietf.org/archive/id/draft-ietf-cbor-edn-literals-08.html
+
+dt'1969-07-21T02:56:16Z',
+dt'1969-07-21T02:56:16.5Z',
+DT'1969-07-21T02:56:16Z'
+
+-14159024,
+-14159023.5,
+1(-14159024)
+
+ip'192.0.2.42',
+IP'192.0.2.42',
+IP'192.0.2.0/24',
+ip'2001:db8::42',
+IP'2001:db8::42',
+IP'2001:db8::/64'
+
+h'c000022a',
+52(h'c000022a'),
+52([24,h'c00002']),
+h'20010db8000000000000000000000042',
+54(h'20010db8000000000000000000000042'),
+54([64,h'20010db8'])
+
+[1, 2, ..., 3]
+,
+{ "a": 1,
+  "b": ...,
+  ...: ...
+}
+
+[1, 2, 888(null), 3]
+,
+{ "a": 1,
+  "b": 888(null),
+  888(null): 888(null)
+}
+
+{ "contract": /CPA/888(["Herewith I buy", 888(null),
+                        "gned: Alice & Bob"]),
+  "signature": 888([h'4711', 888(null), h'0815']),
+}
+
+{ "contract": "Herewith I buy" /.../ "gned: Alice & Bob",
+  "signature": h'4711/.../0815',
+  # ...: ...
+}

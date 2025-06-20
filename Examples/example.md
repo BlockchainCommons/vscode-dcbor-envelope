@@ -1,4 +1,12 @@
+# Markdown Example
+
+This document demonstrates embedding dCBOR diagnostic notation and Gordian Envelope notation within a Markdown file. If the `dCBOR-Envelope` extension is enabled, the following sections will be rendered accordingly.
+
+## dCBOR Diagnostic Notation
+
 ```dcbor
+# dCBOR Diagnostic Notation Example
+
 # string
 "Quoted string"
 
@@ -8,18 +16,23 @@
 
 # binary data
 h'cafebabe'
+b64'AQIDBAUGBwgJCg=='
 
 # tagged value
 100("Hello")
 date(2023-10-01)
+tag-name("hello")
 
 # UR literal
 ur:envelope/tpsotaaodnoyadgdjlssmkcklgoskseodnyteofwwfylkiftaydpdsjz
+ur:date/cyisdadmlasgtapttl
 
 # known values
 '123' / known value /
 'knownValue' / named known value /
 '' / the Unit known value /
+'0'
+Unit
 
 # simple values
 true, false, null
@@ -92,9 +105,62 @@ true, false, null
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
     }
 )
+
+# Examples from EDN I-D
+# https://www.ietf.org/archive/id/draft-ietf-cbor-edn-literals-08.html
+
+dt'1969-07-21T02:56:16Z',
+dt'1969-07-21T02:56:16.5Z',
+DT'1969-07-21T02:56:16Z'
+
+-14159024,
+-14159023.5,
+1(-14159024)
+
+ip'192.0.2.42',
+IP'192.0.2.42',
+IP'192.0.2.0/24',
+ip'2001:db8::42',
+IP'2001:db8::42',
+IP'2001:db8::/64'
+
+h'c000022a',
+52(h'c000022a'),
+52([24,h'c00002']),
+h'20010db8000000000000000000000042',
+54(h'20010db8000000000000000000000042'),
+54([64,h'20010db8'])
+
+[1, 2, ..., 3]
+,
+{ "a": 1,
+  "b": ...,
+  ...: ...
+}
+
+[1, 2, 888(null), 3]
+,
+{ "a": 1,
+  "b": 888(null),
+  888(null): 888(null)
+}
+
+{ "contract": /CPA/888(["Herewith I buy", 888(null),
+                        "gned: Alice & Bob"]),
+  "signature": 888([h'4711', 888(null), h'0815']),
+}
+
+{ "contract": "Herewith I buy" /.../ "gned: Alice & Bob",
+  "signature": h'4711/.../0815',
+  # ...: ...
+}
 ```
 
+## Gordian Envelope Notation
+
 ```envelope
+# Gordian Envelope Notation Example
+
 "Alice" [
     "knows": "Bob"
 ]
@@ -211,6 +277,8 @@ Digest(26d05af5) [
     'note': "Signed by Employer Corp."
     'signed': Signature
 ]
+
+COMPRESSED
 
 ENCRYPTED [
     'hasRecipient': SealedMessage
