@@ -34,7 +34,12 @@
         {
           "injectTo": ["text.html.markdown"],
           "scopeName": "markdown.dcbor.codeblock",
-          "path": "./syntaxes/markdown-dcbor.tmLanguage.json"
+          "path": "./syntaxes/markdown-dcbor.tmLanguage.json",
+          "embeddedLanguages": {
+            "meta.embedded.block.dcbor": "dcbor-envelope",
+            "meta.embedded.block.envelope": "dcbor-envelope",
+            "meta.embedded.block.cbor": "dcbor-envelope"
+          }
         }
       ],
       "themes": [
