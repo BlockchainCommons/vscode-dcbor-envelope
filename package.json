@@ -14,7 +14,7 @@
   "categories": ["Other"],
   "main": "./dist/extension.js",
   "scripts": {
-    "compile": "tsc -p ./",
+    "build": "tsc -p ./",
     "test": "jest"
   },
   "keywords": ["syntax", "dcbor", "envelope", "cbor"],
