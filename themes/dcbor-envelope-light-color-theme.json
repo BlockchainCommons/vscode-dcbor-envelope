@@ -1,5 +1,6 @@
 {
     "name": "dCBOR Envelope Light Theme",
+    "include": "./light_plus.json",
     "type": "light",
     "colors": {},
     "tokenColors": [

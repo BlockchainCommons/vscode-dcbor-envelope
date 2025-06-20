@@ -1,5 +1,6 @@
 {
     "name": "dCBOR Envelope Dark Theme",
+    "include": "./dark_plus.json",
     "type": "dark",
     "colors": {},
     "tokenColors": [
