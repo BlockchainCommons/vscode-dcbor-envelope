@@ -10,7 +10,7 @@
             }
         },
         {
-            "scope": "string.quoted.single.json",
+            "scope": "string.quoted.single.json, string.quoted.single.unit.json",
             "settings": {
                 "foreground": "#529721"
             }

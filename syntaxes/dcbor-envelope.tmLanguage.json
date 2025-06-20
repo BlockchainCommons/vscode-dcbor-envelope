@@ -113,6 +113,10 @@
       "match": "(?i)ur:[a-z][a-z0-9-]*/[a-z]+"
     },
     {
+      "name": "string.quoted.single.unit.json",
+      "match": "\\bUnit\\b"
+    },
+    {
       "name": "identifier.bareword.json",
       "match": "\\b[A-Za-z_][A-Za-z0-9_-]*\\b"
     }

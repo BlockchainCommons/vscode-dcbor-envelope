@@ -1,6 +1,8 @@
 # dCBOR Diagnostic Notation
 
 ```dcbor
+# dCBOR Diagnostic Notation Example
+
 # string
 "Quoted string"
 
@@ -21,15 +23,23 @@ tag-name("hello")
 ur:envelope/tpsotaaodnoyadgdjlssmkcklgoskseodnyteofwwfylkiftaydpdsjz
 ur:date/cyisdadmlasgtapttl
 
-# known values
+# Line comment
+/ block comment /
+
+# known values (tag #6.40000(u64))
 '123' / known value /
-'knownValue' / named known value /
-'' / the Unit known value /
+'date' / named known value /
+
+# The Unit known value #6.40000(0) represents a type with a single inhabitant as
+# well as the single inhabitant of that type. It represents the absence of the
+# _possibility_ of a value, which is different from the absence of a
+# possibly-present value represented by `null`.
+''
 '0'
 Unit
 
 # simple values
-true, false, null
+[true, false, null]
 
 # array
 ["A", 32, "B"]
