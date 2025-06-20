@@ -105,7 +105,7 @@
       "match": "\\b(?:true|false|null|undefined|simple)\\b"
     },
     {
-      "name": "keyword.other.literal.json",
+      "name": "keyword.other.envcase.json",
       "match": "\\b(?:ELIDED|ENCRYPTED|COMPRESSED|NODE|WRAPPED|ASSERTION)\\b"
     },
     {
@@ -113,7 +113,7 @@
       "match": "(?i)ur:[a-z][a-z0-9-]*/[a-z]+"
     },
     {
-      "name": "string.quoted.single.unit.json",
+      "name": "constant.other.unit.json",
       "match": "\\bUnit\\b"
     },
     {

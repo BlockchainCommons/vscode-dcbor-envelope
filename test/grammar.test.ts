@@ -266,7 +266,7 @@ test('tokenize keywords', async () => {
   const line = 'ELIDED ENCRYPTED COMPRESSED';
   const { tokens } = grammar.tokenizeLine(line, INITIAL);
   const scopes = tokens.map(t => t.scopes[t.scopes.length - 1]);
-  expect(scopes).toContain('keyword.other.literal.json');
+  expect(scopes).toContain('keyword.other.envcase.json');
 });
 
 test('tokenize special numeric keywords', async () => {

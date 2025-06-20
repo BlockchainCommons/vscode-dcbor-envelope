@@ -10,7 +10,7 @@
             }
         },
         {
-            "scope": "string.quoted.single.json, string.quoted.single.unit.json",
+            "scope": "string.quoted.single.json, constant.other.unit.json",
             "settings": {
                 "foreground": "#D6E893"
             }
@@ -106,7 +106,7 @@
             }
         },
         {
-            "scope": "keyword.other.literal.json",
+            "scope": "keyword.other.envcase.json",
             "settings": {
                 "foreground": "#d38080"
             }
