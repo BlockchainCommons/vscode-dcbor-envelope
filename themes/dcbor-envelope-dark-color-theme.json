@@ -1,71 +1,100 @@
 {
-  "name": "dCBOR Envelope Dark Theme",
-  "type": "dark",
-  "colors": {},
-  "tokenColors": [
-    {
-      "scope": "string.quoted.double.json",
-      "settings": { "foreground": "#8ABE5E" }
-    },
-    {
-      "scope": "string.quoted.single.json",
-      "settings": { "foreground": "#D6E893" }
-    },
-    {
-      "scope": "constant.numeric.hex.json",
-      "settings": { "foreground": "#4EC9B0" }
-    },
-    {
-      "scope": "constant.numeric.json",
-      "settings": { "foreground": "#34A5DA" }
-    },
-    {
-      "scope": "constant.numeric.date.json",
-      "settings": { "foreground": "#4EC9B0" }
-    },
-    {
-      "scope": "punctuation.separator.json",
-      "settings": { "foreground": "#34A5DA" }
-    },
-    {
-      "scope": "punctuation.square.brackets.json",
-      "settings": { "foreground": "#D4D4D4" }
-    },
-    {
-      "scope": "meta.embedded.block.dcbor punctuation.square.brackets.json, meta.embedded.block.envelope punctuation.square.brackets.json",
-      "settings": { "foreground": "#ffff00" }
-    },
-    {
-      "scope": "meta.embedded.block.dcbor punctuation.curly.braces.json, meta.embedded.block.envelope punctuation.curly.braces.json",
-      "settings": { "foreground": "#ffff00" }
-    },
-    {
-      "scope": "meta.embedded.block.dcbor punctuation.parenthesis.json, meta.embedded.block.envelope punctuation.parenthesis.json",
-      "settings": { "foreground": "#ffff00" }
-    },
-    {
-      "scope": "constant.language.json",
-      "settings": { "foreground": "#9e87d0" }
-    },
-    {
-      "scope": "keyword.other.literal.json",
-      "settings": { "foreground": "#d16969" }
-    },
-    {
-      "scope": "constant.other.ur.json",
-      "settings": { "foreground": "#b5cea8" }
-    },
-    {
-      "scope": "keyword.other.atword.json",
-      "settings": { "foreground": "#c586c0" }
-    },
-    {
-      "scope": "identifier.bareword.json",
-      "settings": { "foreground": "#FDCB56" }
-    },
-    {
-      "scope": ["comment.line.number-sign.json", "comment.block.inline.json"],
-      "settings": { "foreground": "#8d8c8c" }
-    }
-  ]
+    "name": "dCBOR Envelope Dark Theme",
+    "type": "dark",
+    "colors": {},
+    "tokenColors": [
+        {
+            "scope": "string.quoted.double.json",
+            "settings": {
+                "foreground": "#8ABE5E"
+            }
+        },
+        {
+            "scope": "string.quoted.single.json",
+            "settings": {
+                "foreground": "#D6E893"
+            }
+        },
+        {
+            "scope": "string.quoted.prefixed.json",
+            "settings": {
+                "foreground": "#4EC9B0"
+            }
+        },
+        {
+            "scope": "constant.numeric.json",
+            "settings": {
+                "foreground": "#34A5DA"
+            }
+        },
+        {
+            "scope": "constant.numeric.date.json",
+            "settings": {
+                "foreground": "#4EC9B0"
+            }
+        },
+        {
+            "scope": "punctuation.separator.json",
+            "settings": {
+                "foreground": "#34A5DA"
+            }
+        },
+        {
+            "scope": "punctuation.square.brackets.json",
+            "settings": {
+                "foreground": "#D4D4D4"
+            }
+        },
+        {
+            "scope": "meta.embedded.block.dcbor punctuation.square.brackets.json, meta.embedded.block.envelope punctuation.square.brackets.json",
+            "settings": {
+                "foreground": "#ffff00"
+            }
+        },
+        {
+            "scope": "meta.embedded.block.dcbor punctuation.curly.braces.json, meta.embedded.block.envelope punctuation.curly.braces.json",
+            "settings": {
+                "foreground": "#ffff00"
+            }
+        },
+        {
+            "scope": "meta.embedded.block.dcbor punctuation.parenthesis.json, meta.embedded.block.envelope punctuation.parenthesis.json",
+            "settings": {
+                "foreground": "#ffff00"
+            }
+        },
+        {
+            "scope": "constant.language.json",
+            "settings": {
+                "foreground": "#9e87d0"
+            }
+        },
+        {
+            "scope": "keyword.other.literal.json",
+            "settings": {
+                "foreground": "#d16969"
+            }
+        },
+        {
+            "scope": "constant.other.ur.json",
+            "settings": {
+                "foreground": "#b5cea8"
+            }
+        },
+        {
+            "scope": "identifier.bareword.json",
+            "settings": {
+                "foreground": "#FDCB56"
+            }
+        },
+        {
+            "scope": [
+                "comment.line.number-sign.json",
+                "comment.block.inline.json"
+            ],
+            "settings": {
+                "foreground": "#8d8c8c"
+            }
+        }
+    ]
 }

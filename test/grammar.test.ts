@@ -81,7 +81,7 @@ test('tokenize separator punctuation', async () => {
   expect(scopes).toContain('punctuation.separator.json');
 });
 
-test('tokenize hex literals', async () => {
+test('tokenize prefixed string literals', async () => {
   const grammarPath = path.join(__dirname, '..', 'syntaxes', 'dcbor-envelope.tmLanguage.json');
   const grammarContent = fs.readFileSync(grammarPath, 'utf8');
   const registry = new Registry({
@@ -91,26 +91,19 @@ test('tokenize hex literals', async () => {
   const grammar = await registry.loadGrammar('source.dcbor-envelope');
   if (!grammar) throw new Error('Grammar failed to load');
 
-  const line = "[h'1a2b']";
-  const { tokens } = grammar.tokenizeLine(line, INITIAL);
-  const scopes = tokens.map(t => t.scopes[t.scopes.length - 1]);
-  expect(scopes).toContain('constant.numeric.hex.json');
-});
+  // Test with various prefixes
+  const examples = [
+    "[h'1a2b']",
+    "[b'data']",
+    "[u'some text']",
+    "[test'example with escaped \\'quote\\'']"
+  ];
 
-test('tokenize at-words', async () => {
-  const grammarPath = path.join(__dirname, '..', 'syntaxes', 'dcbor-envelope.tmLanguage.json');
-  const grammarContent = fs.readFileSync(grammarPath, 'utf8');
-  const registry = new Registry({
-    onigLib: Promise.resolve(onigLib),
-    loadGrammar: async () => JSON.parse(grammarContent)
-  });
-  const grammar = await registry.loadGrammar('source.dcbor-envelope');
-  if (!grammar) throw new Error('Grammar failed to load');
-
-  const line = '@word';
-  const { tokens } = grammar.tokenizeLine(line, INITIAL);
-  const scopes = tokens.map(t => t.scopes[t.scopes.length - 1]);
-  expect(scopes).toContain('keyword.other.atword.json');
+  for (const line of examples) {
+    const { tokens } = grammar.tokenizeLine(line, INITIAL);
+    const scopes = tokens.map(t => t.scopes[t.scopes.length - 1]);
+    expect(scopes).toContain('string.quoted.prefixed.json');
+  }
 });
 
 test('tokenize bare words', async () => {

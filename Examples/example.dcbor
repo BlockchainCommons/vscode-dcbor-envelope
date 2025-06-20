@@ -5,8 +5,11 @@
 20
 1234.0
 
-# binary data
+# prefixed strings (various styles)
 h'cafebabe'
+b'binary data'
+text'This is some text with an escaped \\'quote\\' inside'
+myPrefix'custom prefixed string'
 
 # tagged value
 100("Hello")
