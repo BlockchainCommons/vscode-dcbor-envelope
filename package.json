@@ -4,6 +4,10 @@
   "description": "Syntax highlighting for dCBOR envelopes",
   "version": "0.0.6",
   "publisher": "local",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/BlockchainCommons/vscode-dcbor-envelope"
+  },
   "engines": {
     "vscode": "^1.75.0"
   },
@@ -14,7 +18,7 @@
     "test": "jest"
   },
   "keywords": ["syntax", "dcbor", "envelope", "cbor"],
-  "license": "MIT",
+  "license": "BSD-2-Clause-Patent",
   "type": "commonjs",
   "contributes": {
     "languages": [
