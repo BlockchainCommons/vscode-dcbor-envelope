@@ -12,7 +12,10 @@ export function activate(context: vscode.ExtensionContext) {
     brackets: [
       ['{', '}'],
       ['[', ']'],
-      ['(', ')']
+      ['(', ')'],
+      ['«', '»'],
+      ['❰', '❱'],
+      ['<<', '>>']
     ]
   });
 

@@ -12,7 +12,10 @@ function activate(context) {
         brackets: [
             ['{', '}'],
             ['[', ']'],
-            ['(', ')']
+            ['(', ')'],
+            ['«', '»'],
+            ['❰', '❱'],
+            ['<<', '>>']
         ]
     });
     // When creating decorations or syntax highlights, get colors from the theme manager
