@@ -1,6 +1,8 @@
 # VS Code Syntax‑Highlighting Extension
 
-This extension provides syntax hVS Code will open a new window with the extension enabled. Open a file with the `.dcbor`, `.envelope`, or `.cbor` extension, or a markdown (`.md`) file with ` ```dcbor `, ` ```envelope `, or ` ```cbor ` code fences to see the highlighting.ghlighting for Deterministic CBOR (dCBOR) and Gordian Envelope files in Visual Studio Code.
+This extension provides syntax hVS Code will open a new window with the extension enabled. Open a file with the `.dcbor`, `.envelope`, or `.cbor` extension, or a markdown (`.md`) file with ` ```dcbor `, ` ```envelope `, or ` ```cbor ` code fences to see the highlighting for Deterministic CBOR (dCBOR) and Gordian Envelope files in Visual Studio Code.
+
+The extension provides two color themes that provide a much more specific look for dCBOR and Envelope notation: `dCBOR Envelope Dark` and `dCBOR Envelope Light`. These themes are designed to enhance the readability of dCBOR and Envelope files, but they must be activated manually.
 
 ## Supported Syntax Features
 
@@ -17,7 +19,7 @@ The extension highlights various syntax elements including:
   - Scientific notation (`1.2e10`, `0x18p-4`)
 - Dates in ISO format
 - Arrays and maps
-- Special constants and keywords
+- Special constants and keywords used in dCBOR and Envelope notation
 - Ellipsis notation (`...` or `…`) highlighted in comment color
 
 ### Multi-line String Examples
