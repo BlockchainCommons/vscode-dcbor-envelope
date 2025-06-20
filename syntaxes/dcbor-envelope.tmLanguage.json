@@ -55,7 +55,7 @@
     },
     {
       "name": "constant.language.json",
-      "match": "\\b(?:true|false|null|undefined)\\b"
+      "match": "\\b(?:true|false|null|undefined|simple)\\b"
     },
     {
       "name": "keyword.other.literal.json",
