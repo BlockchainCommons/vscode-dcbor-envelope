@@ -1,28 +1,5 @@
 # Gordian Envelope Notation
 
-- When running a standard VS Code dark theme, the following highlighting is correct.
-- When running the `dCBOR Envelope Dark` theme, the JSON-specific highlighting is not applied.
-
-```json
-{
-    "name": "Alice",
-    "age": 30,
-    "city": "Wonderland"
-}
-```
-
-- When running a standard VS Code dark theme, the following highlighting is correct.
-- When running the `dCBOR Envelope Dark` theme, the C-specific highlighting is not applied.
-
-```c
-int main() {
-    return 0;
-}
-```
-
-- When running a standard VS Code dark theme, the following highlighting is INCORRECT.
-- When running the `dCBOR Envelope Dark` theme, the Envelope-specific highlighting is CORRECTLY APPLIED.
-
 ```envelope
 "Alice" [
     "knows": "Bob"
@@ -166,7 +143,7 @@ ENCRYPTED [
     'note' [
         'salt': Salt
     ]
-    : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum." [
+    : "Lorem ipsum dolor sit amet, consectetur adipiscing elit." [
         'salt': Salt
     ]
 ]

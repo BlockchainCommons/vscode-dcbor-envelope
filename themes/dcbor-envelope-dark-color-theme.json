@@ -190,6 +190,12 @@
             }
         },
         {
+            "scope": "keyword.other.treebranch.dcbor",
+            "settings": {
+                "foreground": "#d89ad7"
+            }
+        },
+        {
             "scope": "constant.other.ur.dcbor",
             "settings": {
                 "foreground": "#b5cea8"

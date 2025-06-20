@@ -105,16 +105,20 @@
       "match": "\\b(?:true|false|null|undefined|simple)\\b"
     },
     {
-      "name": "keyword.other.envcase.dcbor",
-      "match": "\\b(?:ELIDED|ENCRYPTED|COMPRESSED|NODE|WRAPPED|ASSERTION)\\b"
-    },
-    {
       "name": "constant.other.ur.dcbor",
       "match": "(?i)ur:[a-z][a-z0-9-]*/[a-z]+"
     },
     {
       "name": "constant.other.unit.dcbor",
       "match": "\\bUnit\\b"
+    },
+    {
+      "name": "keyword.other.envcase.dcbor",
+      "match": "\\b(?:ELIDED|ENCRYPTED|COMPRESSED|NODE|WRAPPED|ASSERTION)\\b"
+    },
+    {
+      "name": "keyword.other.treebranch.dcbor",
+      "match": "\\b(?:subj|pred|obj|content)\\b"
     },
     {
       "name": "identifier.bareword.dcbor",

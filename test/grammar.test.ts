@@ -253,7 +253,7 @@ test('tokenize UR literals', async () => {
   expect(scopes).toContain('constant.other.ur.dcbor');
 });
 
-test('tokenize keywords', async () => {
+test('tokenize envelope keywords', async () => {
   const grammarPath = path.join(__dirname, '..', 'syntaxes', 'dcbor-envelope.tmLanguage.json');
   const grammarContent = fs.readFileSync(grammarPath, 'utf8');
   const registry = new Registry({
@@ -267,6 +267,22 @@ test('tokenize keywords', async () => {
   const { tokens } = grammar.tokenizeLine(line, INITIAL);
   const scopes = tokens.flatMap(t => t.scopes);
   expect(scopes).toContain('keyword.other.envcase.dcbor');
+});
+
+test('tokenize tree branch keywords', async () => {
+  const grammarPath = path.join(__dirname, '..', 'syntaxes', 'dcbor-envelope.tmLanguage.json');
+  const grammarContent = fs.readFileSync(grammarPath, 'utf8');
+  const registry = new Registry({
+    onigLib: Promise.resolve(onigLib),
+    loadGrammar: async () => JSON.parse(grammarContent)
+  });
+  const grammar = await registry.loadGrammar('source.dcbor-envelope');
+  if (!grammar) throw new Error('Grammar failed to load');
+
+  const line = 'subj pred obj content';
+  const { tokens } = grammar.tokenizeLine(line, INITIAL);
+  const scopes = tokens.flatMap(t => t.scopes);
+  expect(scopes).toContain('keyword.other.treebranch.dcbor');
 });
 
 test('tokenize special numeric keywords', async () => {
