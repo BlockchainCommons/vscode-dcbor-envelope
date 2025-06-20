@@ -22,7 +22,7 @@
             }
         },
         {
-            "scope": "constant.numeric.json, constant.numeric.special.json",
+            "scope": "constant.numeric.json, constant.numeric.special.json, constant.numeric.hex.json, constant.numeric.binary.json, constant.numeric.octal.json",
             "settings": {
                 "foreground": "#1750EB"
             }

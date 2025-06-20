@@ -266,3 +266,27 @@ test('tokenize multiline prefixed string literals', async () => {
   expect(scopesLast).toContain('string.quoted.prefixed.multiline.json');
   expect(scopesLast).toContain('comment.block.inline.json');
 });
+
+test('tokenize hexadecimal floating point with binary exponent', async () => {
+  const grammarPath = path.join(__dirname, '..', 'syntaxes', 'dcbor-envelope.tmLanguage.json');
+  const grammarContent = fs.readFileSync(grammarPath, 'utf8');
+  const registry = new Registry({
+    onigLib: Promise.resolve(onigLib),
+    loadGrammar: async () => JSON.parse(grammarContent)
+  });
+  const grammar = await registry.loadGrammar('source.dcbor-envelope');
+  if (!grammar) throw new Error('Grammar failed to load');
+
+  const examples = [
+    '0x1.8p0',
+    '0x18p-4',
+    '0x3.ap5',
+    '0xA.Bp-3'
+  ];
+
+  for (const line of examples) {
+    const { tokens } = grammar.tokenizeLine(line, INITIAL);
+    const scopes = tokens.map(t => t.scopes[t.scopes.length - 1]);
+    expect(scopes).toContain('constant.numeric.hex.json');
+  }
+});

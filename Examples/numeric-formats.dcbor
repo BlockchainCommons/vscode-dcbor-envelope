@@ -1,0 +1,38 @@
+# Numeric Formats Test
+
+# Regular integers
+42
+-123
+4711
+
+# Decimal / floating point
+3.14159
+-2.718
+1.5
+
+# Scientific notation
+1.2e10
+
+# Hexadecimal floating point with binary exponent
+0x1.8p0    # 1.5 in decimal (1.5 × 2^0)
+0x18p-4    # 1.5 in decimal (24 × 2^-4 = 24/16 = 1.5)
+0x3.ap5    # 116.0 in decimal (3.625 × 2^5)
+0xA.Bp-3   # 1.3359375 in decimal (10.6875 × 2^-3)
+
+# Hexadecimal
+0x1267
+0xDEADBEEF
+0X123ABC
+
+# Binary
+0b10010011001111
+0B101010
+
+# Octal
+0o1234567
+0O755
+
+# Special values
+Infinity
+-Infinity
+NaN
