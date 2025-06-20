@@ -4,130 +4,130 @@
     "colors": {},
     "tokenColors": [
         {
-            "scope": "string.quoted.double.json",
+            "scope": "string.quoted.double.dcbor",
             "settings": {
                 "foreground": "#8ABE5E"
             }
         },
         {
-            "scope": "string.quoted.single.json, constant.other.unit.json",
+            "scope": "string.quoted.single.dcbor, constant.other.unit.dcbor",
             "settings": {
                 "foreground": "#D6E893"
             }
         },
         {
-            "scope": "string.quoted.prefixed.json, string.quoted.prefixed.multiline.json, entity.name.tag.json",
+            "scope": "string.quoted.prefixed.dcbor, string.quoted.prefixed.multiline.dcbor, entity.name.tag.dcbor",
             "settings": {
                 "foreground": "#4EC9B0"
             }
         },
         {
-            "scope": "constant.numeric.json, constant.numeric.special.json, constant.numeric.hex.json, constant.numeric.binary.json, constant.numeric.octal.json",
+            "scope": "constant.numeric.dcbor, constant.numeric.special.dcbor, constant.numeric.hex.dcbor, constant.numeric.binary.dcbor, constant.numeric.octal.dcbor",
             "settings": {
                 "foreground": "#34A5DA"
             }
         },
         {
-            "scope": "constant.numeric.date.json",
+            "scope": "constant.numeric.date.dcbor",
             "settings": {
                 "foreground": "#4EC9B0"
             }
         },
         {
-            "scope": "punctuation.separator.json",
+            "scope": "punctuation.separator.dcbor",
             "settings": {
                 "foreground": "#34A5DA"
             }
         },
         {
-            "scope": "punctuation.square.brackets.json",
+            "scope": "punctuation.square.brackets.dcbor",
             "settings": {
                 "foreground": "#D4D4D4"
             }
         },
         {
-            "scope": "punctuation.angle.brackets.double.json",
+            "scope": "punctuation.angle.brackets.double.dcbor",
             "settings": {
                 "foreground": "#ffff00"
             }
         },
         {
-            "scope": "punctuation.angle.brackets.guillemet.json",
+            "scope": "punctuation.angle.brackets.guillemet.dcbor",
             "settings": {
                 "foreground": "#ffff00"
             }
         },
         {
-            "scope": "punctuation.angle.brackets.floral.json",
+            "scope": "punctuation.angle.brackets.floral.dcbor",
             "settings": {
                 "foreground": "#ffff00"
             }
         },
         {
-            "scope": "meta.embedded.block.dcbor punctuation.square.brackets.json, meta.embedded.block.envelope punctuation.square.brackets.json",
+            "scope": "meta.embedded.block.dcbor punctuation.square.brackets.dcbor, meta.embedded.block.envelope punctuation.square.brackets.dcbor",
             "settings": {
                 "foreground": "#ffff00"
             }
         },
         {
-            "scope": "meta.embedded.block.dcbor punctuation.curly.braces.json, meta.embedded.block.envelope punctuation.curly.braces.json",
+            "scope": "meta.embedded.block.dcbor punctuation.curly.braces.dcbor, meta.embedded.block.envelope punctuation.curly.braces.dcbor",
             "settings": {
                 "foreground": "#ffff00"
             }
         },
         {
-            "scope": "meta.embedded.block.dcbor punctuation.parenthesis.json, meta.embedded.block.envelope punctuation.parenthesis.json",
+            "scope": "meta.embedded.block.dcbor punctuation.parenthesis.dcbor, meta.embedded.block.envelope punctuation.parenthesis.dcbor",
             "settings": {
                 "foreground": "#ffff00"
             }
         },
         {
-            "scope": "meta.embedded.block.dcbor punctuation.angle.brackets.double.json, meta.embedded.block.envelope punctuation.angle.brackets.double.json",
+            "scope": "meta.embedded.block.dcbor punctuation.angle.brackets.double.dcbor, meta.embedded.block.envelope punctuation.angle.brackets.double.dcbor",
             "settings": {
                 "foreground": "#ffff00"
             }
         },
         {
-            "scope": "meta.embedded.block.dcbor punctuation.angle.brackets.guillemet.json, meta.embedded.block.envelope punctuation.angle.brackets.guillemet.json",
+            "scope": "meta.embedded.block.dcbor punctuation.angle.brackets.guillemet.dcbor, meta.embedded.block.envelope punctuation.angle.brackets.guillemet.dcbor",
             "settings": {
                 "foreground": "#ffff00"
             }
         },
         {
-            "scope": "meta.embedded.block.dcbor punctuation.angle.brackets.floral.json, meta.embedded.block.envelope punctuation.angle.brackets.floral.json",
+            "scope": "meta.embedded.block.dcbor punctuation.angle.brackets.floral.dcbor, meta.embedded.block.envelope punctuation.angle.brackets.floral.dcbor",
             "settings": {
                 "foreground": "#ffff00"
             }
         },
         {
-            "scope": "constant.language.json",
+            "scope": "constant.language.dcbor",
             "settings": {
                 "foreground": "#9c9cf9"
             }
         },
         {
-            "scope": "keyword.other.envcase.json",
+            "scope": "keyword.other.envcase.dcbor",
             "settings": {
                 "foreground": "#d38080"
             }
         },
         {
-            "scope": "constant.other.ur.json",
+            "scope": "constant.other.ur.dcbor",
             "settings": {
                 "foreground": "#b5cea8"
             }
         },
         {
-            "scope": "identifier.bareword.json",
+            "scope": "identifier.bareword.dcbor",
             "settings": {
                 "foreground": "#FDCB56"
             }
         },
         {
             "scope": [
-                "comment.line.number-sign.json",
-                "comment.block.inline.json",
-                "comment.line.ellipsis.json"
+                "comment.line.number-sign.dcbor",
+                "comment.block.inline.dcbor",
+                "comment.line.ellipsis.dcbor"
             ],
             "settings": {
                 "foreground": "#8d8c8c"

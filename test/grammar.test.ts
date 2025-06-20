@@ -28,9 +28,9 @@ test('tokenize square brackets, strings and numbers', async () => {
   const line = '["foo", 123]';
   const { tokens } = grammar.tokenizeLine(line, INITIAL);
   const scopes = tokens.map(t => t.scopes[t.scopes.length - 1]);
-  expect(scopes).toContain('punctuation.square.brackets.json');
-  expect(scopes).toContain('string.quoted.double.json');
-  expect(scopes).toContain('constant.numeric.json');
+  expect(scopes).toContain('punctuation.square.brackets.dcbor');
+  expect(scopes).toContain('string.quoted.double.dcbor');
+  expect(scopes).toContain('constant.numeric.dcbor');
 });
 
 test('tokenize single quoted strings', async () => {
@@ -46,7 +46,7 @@ test('tokenize single quoted strings', async () => {
   const line = "['bar']";
   const { tokens } = grammar.tokenizeLine(line, INITIAL);
   const scopes = tokens.map(t => t.scopes[t.scopes.length - 1]);
-  expect(scopes).toContain('string.quoted.single.json');
+  expect(scopes).toContain('string.quoted.single.dcbor');
 });
 
 test('tokenize double angle brackets', async () => {
@@ -62,7 +62,7 @@ test('tokenize double angle brackets', async () => {
   const line = "<<test>>";
   const { tokens } = grammar.tokenizeLine(line, INITIAL);
   const scopes = tokens.map(t => t.scopes[t.scopes.length - 1]);
-  expect(scopes).toContain('punctuation.angle.brackets.double.json');
+  expect(scopes).toContain('punctuation.angle.brackets.double.dcbor');
 });
 
 test('tokenize guillemet brackets', async () => {
@@ -78,7 +78,7 @@ test('tokenize guillemet brackets', async () => {
   const line = "«test»";
   const { tokens } = grammar.tokenizeLine(line, INITIAL);
   const scopes = tokens.map(t => t.scopes[t.scopes.length - 1]);
-  expect(scopes).toContain('punctuation.angle.brackets.guillemet.json');
+  expect(scopes).toContain('punctuation.angle.brackets.guillemet.dcbor');
 });
 
 test('tokenize floral brackets', async () => {
@@ -94,7 +94,7 @@ test('tokenize floral brackets', async () => {
   const line = "❰test❱";
   const { tokens } = grammar.tokenizeLine(line, INITIAL);
   const scopes = tokens.map(t => t.scopes[t.scopes.length - 1]);
-  expect(scopes).toContain('punctuation.angle.brackets.floral.json');
+  expect(scopes).toContain('punctuation.angle.brackets.floral.dcbor');
 });
 
 test('tokenize boolean and null literals', async () => {
@@ -110,7 +110,7 @@ test('tokenize boolean and null literals', async () => {
   const line = '[true, false, null]';
   const { tokens } = grammar.tokenizeLine(line, INITIAL);
   const scopes = tokens.map(t => t.scopes[t.scopes.length - 1]);
-  expect(scopes).toContain('constant.language.json');
+  expect(scopes).toContain('constant.language.dcbor');
 });
 
 test('tokenize separator punctuation', async () => {
@@ -126,7 +126,7 @@ test('tokenize separator punctuation', async () => {
   const line = '[1,2:3;]';
   const { tokens } = grammar.tokenizeLine(line, INITIAL);
   const scopes = tokens.map(t => t.scopes[t.scopes.length - 1]);
-  expect(scopes).toContain('punctuation.separator.json');
+  expect(scopes).toContain('punctuation.separator.dcbor');
 });
 
 test('tokenize prefixed string literals', async () => {
@@ -151,8 +151,8 @@ test('tokenize prefixed string literals', async () => {
     const { tokens } = grammar.tokenizeLine(line, INITIAL);
     const scopes = tokens.map(t => t.scopes[t.scopes.length - 1]);
     expect(scopes.some(scope =>
-      scope === 'string.quoted.prefixed.json' ||
-      scope === 'string.quoted.prefixed.multiline.json'
+      scope === 'string.quoted.prefixed.dcbor' ||
+      scope === 'string.quoted.prefixed.multiline.dcbor'
     )).toBeTruthy();
   }
 });
@@ -170,7 +170,7 @@ test('tokenize bare words', async () => {
   const line = 'bareWord';
   const { tokens } = grammar.tokenizeLine(line, INITIAL);
   const scopes = tokens.map(t => t.scopes[t.scopes.length - 1]);
-  expect(scopes).toContain('identifier.bareword.json');
+  expect(scopes).toContain('identifier.bareword.dcbor');
 });
 
 test('tokenize inline comments', async () => {
@@ -186,7 +186,7 @@ test('tokenize inline comments', async () => {
   const line = '/ inline comment /';
   const { tokens } = grammar.tokenizeLine(line, INITIAL);
   const scopes = tokens.map(t => t.scopes[t.scopes.length - 1]);
-  expect(scopes).toContain('comment.block.inline.json');
+  expect(scopes).toContain('comment.block.inline.dcbor');
 });
 
 test('tokenize end of line comments', async () => {
@@ -202,7 +202,7 @@ test('tokenize end of line comments', async () => {
   const line = '# end';
   const { tokens } = grammar.tokenizeLine(line, INITIAL);
   const scopes = tokens.map(t => t.scopes[t.scopes.length - 1]);
-  expect(scopes).toContain('comment.line.number-sign.json');
+  expect(scopes).toContain('comment.line.number-sign.dcbor');
 });
 
 test('tokenize ISO-8601 dates and date/time literals', async () => {
@@ -218,7 +218,7 @@ test('tokenize ISO-8601 dates and date/time literals', async () => {
   const line = '[2025-06-19, 2025-06-19T21:57:12Z]';
   const { tokens } = grammar.tokenizeLine(line, INITIAL);
   const scopes = tokens.map(t => t.scopes[t.scopes.length - 1]);
-  expect(scopes).toContain('constant.numeric.date.json');
+  expect(scopes).toContain('constant.numeric.date.dcbor');
 });
 
 test('tokenize bare hex numbers', async () => {
@@ -234,7 +234,7 @@ test('tokenize bare hex numbers', async () => {
   const line = '[4676635a]';
   const { tokens } = grammar.tokenizeLine(line, INITIAL);
   const scopes = tokens.map(t => t.scopes[t.scopes.length - 1]);
-  expect(scopes).toContain('constant.numeric.json');
+  expect(scopes).toContain('constant.numeric.dcbor');
 });
 
 test('tokenize UR literals', async () => {
@@ -250,7 +250,7 @@ test('tokenize UR literals', async () => {
   const line = 'ur:envelope/abcd';
   const { tokens } = grammar.tokenizeLine(line, INITIAL);
   const scopes = tokens.map(t => t.scopes[t.scopes.length - 1]);
-  expect(scopes).toContain('constant.other.ur.json');
+  expect(scopes).toContain('constant.other.ur.dcbor');
 });
 
 test('tokenize keywords', async () => {
@@ -266,7 +266,7 @@ test('tokenize keywords', async () => {
   const line = 'ELIDED ENCRYPTED COMPRESSED';
   const { tokens } = grammar.tokenizeLine(line, INITIAL);
   const scopes = tokens.map(t => t.scopes[t.scopes.length - 1]);
-  expect(scopes).toContain('keyword.other.envcase.json');
+  expect(scopes).toContain('keyword.other.envcase.dcbor');
 });
 
 test('tokenize special numeric keywords', async () => {
@@ -282,7 +282,7 @@ test('tokenize special numeric keywords', async () => {
   const line = '[Infinity, -Infinity, NaN]';
   const { tokens } = grammar.tokenizeLine(line, INITIAL);
   const scopes = tokens.map(t => t.scopes[t.scopes.length - 1]);
-  expect(scopes).toContain('constant.numeric.special.json');
+  expect(scopes).toContain('constant.numeric.special.dcbor');
 });
 
 test('tokenize multiline prefixed string literals', async () => {
@@ -305,14 +305,14 @@ test('tokenize multiline prefixed string literals', async () => {
   // First line should have the beginning of a multiline prefixed string
   const line1Result = grammar.tokenizeLine(lines[0], INITIAL);
   const scopes1 = line1Result.tokens.map(t => t.scopes[t.scopes.length - 1]);
-  expect(scopes1).toContain('string.quoted.prefixed.multiline.json');
-  expect(scopes1).toContain('comment.block.inline.json');
+  expect(scopes1).toContain('string.quoted.prefixed.multiline.dcbor');
+  expect(scopes1).toContain('comment.block.inline.dcbor');
 
   // Last line should have the end of the multiline prefixed string
   const lastLineResult = grammar.tokenizeLine(lines[2], INITIAL);
   const scopesLast = lastLineResult.tokens.map(t => t.scopes[t.scopes.length - 1]);
-  expect(scopesLast).toContain('string.quoted.prefixed.multiline.json');
-  expect(scopesLast).toContain('comment.block.inline.json');
+  expect(scopesLast).toContain('string.quoted.prefixed.multiline.dcbor');
+  expect(scopesLast).toContain('comment.block.inline.dcbor');
 });
 
 test('tokenize hexadecimal floating point with binary exponent', async () => {
@@ -335,6 +335,6 @@ test('tokenize hexadecimal floating point with binary exponent', async () => {
   for (const line of examples) {
     const { tokens } = grammar.tokenizeLine(line, INITIAL);
     const scopes = tokens.map(t => t.scopes[t.scopes.length - 1]);
-    expect(scopes).toContain('constant.numeric.hex.json');
+    expect(scopes).toContain('constant.numeric.hex.dcbor');
   }
 });

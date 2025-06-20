@@ -1,3 +1,16 @@
+
+```json
+{
+    "949a991e": {
+        "subj": "Hello.",
+        "fcb4e2be": {
+        "pred": "signed",
+        "obj": "Signature"
+        }
+    }
+}
+```
+
 ```envelope
 949a991e NODE
     8cc96cdb subj "Hello."

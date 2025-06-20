@@ -20,7 +20,7 @@ function activate(context) {
     });
     // When creating decorations or syntax highlights, get colors from the theme manager
     // For example:
-    // const hexColor = themeManager.getColorForScope('constant.numeric.hex.json');
+    // const hexColor = themeManager.getColorForScope('constant.numeric.hex.dcbor');
     // const hexDecoration = vscode.window.createTextEditorDecorationType({
     //   color: hexColor
     // });
