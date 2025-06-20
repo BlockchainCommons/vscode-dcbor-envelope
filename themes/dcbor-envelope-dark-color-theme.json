@@ -126,7 +126,8 @@
         {
             "scope": [
                 "comment.line.number-sign.json",
-                "comment.block.inline.json"
+                "comment.block.inline.json",
+                "comment.line.ellipsis.json"
             ],
             "settings": {
                 "foreground": "#8d8c8c"

@@ -10,6 +10,10 @@
       "match": "#.*$"
     },
     {
+      "name": "comment.line.ellipsis.json",
+      "match": "\\.\\.\\.|…"
+    },
+    {
       "name": "punctuation.square.brackets.json",
       "match": "\\[|\\]"
     },

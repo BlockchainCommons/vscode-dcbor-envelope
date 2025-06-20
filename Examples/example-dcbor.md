@@ -1,3 +1,6 @@
+## dCBOR Diagnostic Notation
+
+```dcbor
 # dCBOR Diagnostic Notation Example
 
 # string
@@ -258,3 +261,4 @@ h'20010db8000000000000000000000042',
   "signature": h'4711/.../0815',
   # ...: ...
 }
+```

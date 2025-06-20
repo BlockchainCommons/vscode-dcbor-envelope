@@ -138,3 +138,14 @@ ENCRYPTED [
         'salt': Salt
     ]
 ]
+
+request(ARID(c66be27d)) [
+    'body': «do_it» [
+        ❰arg1❱: Type1
+        ❰arg2❱: Type2
+    ]
+    'senderPublicKey': PublicKeyBase
+    'senderContinuation': ENCRYPTED [
+        'hasRecipient': SealedMessage
+    ]
+]

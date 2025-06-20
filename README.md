@@ -18,6 +18,7 @@ The extension highlights various syntax elements including:
 - Dates in ISO format
 - Arrays and maps
 - Special constants and keywords
+- Ellipsis notation (`...` or `…`) highlighted in comment color
 
 ### Multi-line String Examples
 

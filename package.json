@@ -2,7 +2,7 @@
   "name": "dcbor-envelope",
   "displayName": "dCBOR-Envelope",
   "description": "Syntax highlighting for dCBOR envelopes",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "publisher": "local",
   "engines": {
     "vscode": "^1.75.0"
