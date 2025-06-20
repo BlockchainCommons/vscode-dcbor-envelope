@@ -20,6 +20,9 @@ tag-name("hello")
 ur:envelope/tpsotaaodnoyadgdjlssmkcklgoskseodnyteofwwfylkiftaydpdsjz
 ur:date/cyisdadmlasgtapttl
 
+# Line comment
+/ block comment /
+
 # known values
 '123' / known value /
 'knownValue' / named known value /
