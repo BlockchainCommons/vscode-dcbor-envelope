@@ -66,13 +66,13 @@
         {
             "scope": "constant.language.json",
             "settings": {
-                "foreground": "#9e87d0"
+                "foreground": "#9c9cf9"
             }
         },
         {
             "scope": "keyword.other.literal.json",
             "settings": {
-                "foreground": "#d16969"
+                "foreground": "#d38080"
             }
         },
         {

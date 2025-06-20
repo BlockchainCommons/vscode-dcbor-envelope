@@ -27,7 +27,7 @@
     },
     {
       "name": "string.quoted.prefixed.json",
-      "match": "[a-zA-Z]+'(?:[^'\\\\]|\\\\.)*'"
+      "match": "[a-zA-Z]?[a-zA-Z0-9]+'(?:[^'\\\\]|\\\\.)*'"
     },
     {
       "name": "string.quoted.double.json",
@@ -51,7 +51,7 @@
     },
     {
       "name": "constant.language.json",
-      "match": "\\b(?:true|false|null)\\b"
+      "match": "\\b(?:true|false|null|undefined)\\b"
     },
     {
       "name": "keyword.other.literal.json",
@@ -63,7 +63,7 @@
     },
     {
       "name": "identifier.bareword.json",
-      "match": "\\b[A-Za-z_][A-Za-z0-9_]*\\b"
+      "match": "\\b[A-Za-z_][A-Za-z0-9_-]*\\b"
     }
   ]
 }
