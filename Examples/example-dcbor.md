@@ -1,8 +1,6 @@
 # dCBOR Diagnostic Notation
 
 ```dcbor
-# dCBOR Diagnostic Notation Example
-
 # string
 "Quoted string"
 

@@ -106,7 +106,7 @@
     },
     {
       "name": "keyword.other.literal.json",
-      "match": "\\b(?:ELIDED|ENCRYPTED|COMPRESSED)\\b"
+      "match": "\\b(?:ELIDED|ENCRYPTED|COMPRESSED|NODE|WRAPPED|ASSERTION)\\b"
     },
     {
       "name": "constant.other.ur.json",
