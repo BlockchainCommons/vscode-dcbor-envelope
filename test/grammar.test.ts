@@ -102,7 +102,7 @@ test('tokenize prefixed string literals', async () => {
   for (const line of examples) {
     const { tokens } = grammar.tokenizeLine(line, INITIAL);
     const scopes = tokens.map(t => t.scopes[t.scopes.length - 1]);
-    expect(scopes).toContain('string.quoted.prefixed.json');
+    expect(scopes).toContain('string.quoted.prefixed.multiline.json');
   }
 });
 
@@ -231,5 +231,35 @@ test('tokenize special numeric keywords', async () => {
   const line = '[Infinity, -Infinity, NaN]';
   const { tokens } = grammar.tokenizeLine(line, INITIAL);
   const scopes = tokens.map(t => t.scopes[t.scopes.length - 1]);
-  expect(scopes).toContain('constant.numeric.json');
+  expect(scopes).toContain('constant.numeric.special.json');
+});
+
+test('tokenize multiline prefixed string literals', async () => {
+  const grammarPath = path.join(__dirname, '..', 'syntaxes', 'dcbor-envelope.tmLanguage.json');
+  const grammarContent = fs.readFileSync(grammarPath, 'utf8');
+  const registry = new Registry({
+    onigLib: Promise.resolve(onigLib),
+    loadGrammar: async () => JSON.parse(grammarContent)
+  });
+  const grammar = await registry.loadGrammar('source.dcbor-envelope');
+  if (!grammar) throw new Error('Grammar failed to load');
+
+  // Test multiline prefixed string with inline comments
+  const lines = [
+    "h'68 65 6c /doubled l!/ 6c 6f /hello/",
+    "20 /space/",
+    "77 6f 72 6c 64' /world/"
+  ];
+
+  // First line should have the beginning of a multiline prefixed string
+  const line1Result = grammar.tokenizeLine(lines[0], INITIAL);
+  const scopes1 = line1Result.tokens.map(t => t.scopes[t.scopes.length - 1]);
+  expect(scopes1).toContain('string.quoted.prefixed.multiline.json');
+  expect(scopes1).toContain('comment.block.inline.json');
+
+  // Last line should have the end of the multiline prefixed string
+  const lastLineResult = grammar.tokenizeLine(lines[2], INITIAL);
+  const scopesLast = lastLineResult.tokens.map(t => t.scopes[t.scopes.length - 1]);
+  expect(scopesLast).toContain('string.quoted.prefixed.multiline.json');
+  expect(scopesLast).toContain('comment.block.inline.json');
 });

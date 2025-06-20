@@ -1,0 +1,20 @@
+# dCBOR Multiline String Test
+
+# Single-line prefixed string (original behavior)
+h'68 65 6c 6c 6f 20 77 6f 72 6c 64' /hello world/
+
+# Multi-line prefixed string (new feature)
+h'68 65 6c /doubled l!/ 6c 6f /hello/
+20 /space/
+77 6f 72 6c 64' /world/
+
+# Another example with different prefix
+b64'AQID
+BAUGBw
+gJCg=='
+
+# Testing with escaped quotes
+h'616e79
+7468696e67
+776974682773696e676c65
+71756f7465\''

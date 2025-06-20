@@ -8,9 +8,18 @@ The extension highlights various syntax elements including:
 
 - Regular strings (double and single quoted)
 - Prefixed strings (any alphabetic prefix followed by a single-quoted string, like `h'data'` or `b'binary'`)
+- Multi-line prefixed strings that can span across multiple lines with inline comments
 - Numbers and dates
 - Arrays and maps
 - Special constants and keywords
+
+### Multi-line String Example
+
+```dcbor
+h'68 65 6c /doubled l!/ 6c 6f /hello/
+20 /space/
+77 6f 72 6c 64' /world/
+```
 
 ## VS Code development deployment
 
