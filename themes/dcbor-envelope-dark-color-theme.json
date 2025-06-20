@@ -1,5 +1,5 @@
 {
-  "name": "dCBOR Envelope Theme",
+  "name": "dCBOR Envelope Dark Theme",
   "type": "dark",
   "colors": {},
   "tokenColors": [
@@ -30,6 +30,18 @@
     {
       "scope": "punctuation.square.brackets.json",
       "settings": { "foreground": "#D4D4D4" }
+    },
+    {
+      "scope": "meta.embedded.block.dcbor punctuation.square.brackets.json, meta.embedded.block.envelope punctuation.square.brackets.json",
+      "settings": { "foreground": "#FFFF00" }
+    },
+    {
+      "scope": "meta.embedded.block.dcbor punctuation.curly.braces.json, meta.embedded.block.envelope punctuation.curly.braces.json",
+      "settings": { "foreground": "#FFFF00" }
+    },
+    {
+      "scope": "meta.embedded.block.dcbor punctuation.parenthesis.json, meta.embedded.block.envelope punctuation.parenthesis.json",
+      "settings": { "foreground": "#FFFF00" }
     },
     {
       "scope": "constant.language.json",

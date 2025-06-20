@@ -1,0 +1,71 @@
+{
+  "name": "dCBOR Envelope Light Theme",
+  "type": "light",
+  "colors": {},
+  "tokenColors": [
+    {
+      "scope": "string.quoted.double.json",
+      "settings": { "foreground": "#A31515" }
+    },
+    {
+      "scope": "string.quoted.single.json",
+      "settings": { "foreground": "#0a7c33" }
+    },
+    {
+      "scope": "constant.numeric.hex.json",
+      "settings": { "foreground": "#098658" }
+    },
+    {
+      "scope": "constant.numeric.json",
+      "settings": { "foreground": "#1750EB" }
+    },
+    {
+      "scope": "constant.numeric.date.json",
+      "settings": { "foreground": "#098658" }
+    },
+    {
+      "scope": "punctuation.separator.json",
+      "settings": { "foreground": "#7d9600" }
+    },
+    {
+      "scope": "punctuation.square.brackets.json",
+      "settings": { "foreground": "#000000" }
+    },
+    {
+      "scope": "meta.embedded.block.dcbor punctuation.square.brackets.json, meta.embedded.block.envelope punctuation.square.brackets.json",
+      "settings": { "foreground": "#7d6600" }
+    },
+    {
+      "scope": "meta.embedded.block.dcbor punctuation.curly.braces.json, meta.embedded.block.envelope punctuation.curly.braces.json",
+      "settings": { "foreground": "#7d6600" }
+    },
+    {
+      "scope": "meta.embedded.block.dcbor punctuation.parenthesis.json, meta.embedded.block.envelope punctuation.parenthesis.json",
+      "settings": { "foreground": "#7d6600" }
+    },
+    {
+      "scope": "constant.language.json",
+      "settings": { "foreground": "#5e3e8f" }
+    },
+    {
+      "scope": "keyword.other.literal.json",
+      "settings": { "foreground": "#9b2424" }
+    },
+    {
+      "scope": "constant.other.ur.json",
+      "settings": { "foreground": "#3c6341" }
+    },
+    {
+      "scope": "keyword.other.atword.json",
+      "settings": { "foreground": "#af00db" }
+    },
+    {
+      "scope": "identifier.bareword.json",
+      "settings": { "foreground": "#0000ff" }
+    },
+    {
+      "scope": ["comment.line.number-sign.json", "comment.block.inline.json"],
+      "settings": { "foreground": "#707070" }
+    }
+  ]
+}
