@@ -46,12 +46,12 @@
       "match": "\\b[0-9]*[a-fA-F][0-9a-fA-F]*\\b"
     },
     {
-      "name": "constant.numeric.json",
-      "match": "-?(?:0|[1-9]\\d*)(?:\\.\\d+)?(?:[eE][+-]?\\d+)?"
+      "name": "constant.numeric.special.json",
+      "match": "-Infinity|Infinity|NaN"
     },
     {
       "name": "constant.numeric.json",
-      "match": "\\b((-?Infinity)|NaN)\\b"
+      "match": "-?(?:0|[1-9]\\d*)(?:\\.\\d+)?(?:[eE][+-]?\\d+)?"
     },
     {
       "name": "constant.language.json",

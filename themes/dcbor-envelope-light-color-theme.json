@@ -22,7 +22,7 @@
             }
         },
         {
-            "scope": "constant.numeric.json",
+            "scope": "constant.numeric.json, constant.numeric.special.json",
             "settings": {
                 "foreground": "#1750EB"
             }
