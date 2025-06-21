@@ -15,7 +15,8 @@
   "main": "./dist/extension.js",
   "scripts": {
     "build": "tsc -p ./",
-    "test": "jest"
+    "test": "jest",
+    "dev": "code --extensionDevelopmentPath=$(pwd)"
   },
   "keywords": ["syntax", "dcbor", "envelope", "cbor"],
   "license": "BSD-2-Clause-Patent",
@@ -27,6 +28,12 @@
         "aliases": ["dCBOR-Envelope", "dcbor", "envelope", "cbor"],
         "extensions": [".dcbor", ".envelope", ".cbor"],
         "configuration": "./language-configuration.json"
+      },
+      {
+        "id": "envelope-pattern",
+        "aliases": ["Envelope Pattern", "envpat"],
+        "extensions": [".envpat"],
+        "configuration": "./language-configuration.json"
       }
     ],
       "grammars": [
@@ -36,6 +43,11 @@
           "path": "./syntaxes/dcbor-envelope.tmLanguage.json"
         },
         {
+          "language": "envelope-pattern",
+          "scopeName": "source.envelope-pattern",
+          "path": "./syntaxes/envelope-pattern.tmLanguage.json"
+        },
+        {
           "injectTo": ["text.html.markdown"],
           "scopeName": "markdown.dcbor.codeblock",
           "path": "./syntaxes/markdown-dcbor.tmLanguage.json",
@@ -43,7 +55,9 @@
             "meta.embedded.block.dcbor": "dcbor-envelope",
             "meta.embedded.block.envelope": "dcbor-envelope",
             "meta.embedded.block.cbor": "dcbor-envelope",
-            "source.dcbor-envelope": "dcbor-envelope"
+            "meta.embedded.block.envpat": "envelope-pattern",
+            "source.dcbor-envelope": "dcbor-envelope",
+            "source.envelope-pattern": "envelope-pattern"
           }
         }
       ],

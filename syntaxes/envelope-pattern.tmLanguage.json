@@ -1,0 +1,14 @@
+{
+  "scopeName": "source.envelope-pattern",
+  "patterns": [
+    {
+      "comment": "Regex patterns with optional flags - override dcbor comment handling",
+      "name": "string.regexp.envelope-pattern",
+      "match": "\\/(?:[^\\/\\n\\\\]|\\\\.)+\\/[gimsuxy]*"
+    },
+    {
+      "comment": "Include base dCBOR grammar patterns",
+      "include": "source.dcbor-envelope"
+    }
+  ]
+}

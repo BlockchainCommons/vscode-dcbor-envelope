@@ -100,6 +100,15 @@
             }
         },
         {
+            "scope": [
+                "string.regexp",
+                "string.regexp.envelope-pattern"
+            ],
+            "settings": {
+                "foreground": "#FF4444"
+            }
+        },
+        {
             "scope": "constant.numeric.dcbor, constant.numeric.special.dcbor, constant.numeric.hex.dcbor, constant.numeric.binary.dcbor, constant.numeric.octal.dcbor",
             "settings": {
                 "foreground": "#34A5DA"
