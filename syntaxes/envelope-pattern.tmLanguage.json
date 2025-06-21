@@ -3,15 +3,10 @@
   "name": "Envelope Pattern",
   "patterns": [
     {
-      "comment": "Test pattern - highlight everything as string to verify grammar is working",
-      "match": "\\w+",
-      "name": "string.test.envelope-pattern"
-    },
-    {
       "include": "#parenthesized-with-regex"
     },
     {
-      "include": "#dcbor-base"
+      "include": "source.dcbor-envelope"
     }
   ],
   "repository": {
@@ -37,14 +32,6 @@
               "include": "$self"
             }
           ]
-        }
-      ]
-    },
-    "dcbor-base": {
-      "patterns": [
-        {
-          "comment": "Include all patterns from the base dcbor-envelope grammar",
-          "include": "source.dcbor-envelope"
         }
       ]
     }
