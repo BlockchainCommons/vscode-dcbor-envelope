@@ -103,13 +103,13 @@
                 "string.regexp.envelope-pattern"
             ],
             "settings": {
-                "foreground": "#FF4444"
+                "foreground": "#b83838"
             }
         },
         {
             "scope": "keyword.operator.envelope-pattern",
             "settings": {
-                "foreground": "#00FF00"
+                "foreground": "#529815"
             }
         },
         {
@@ -118,7 +118,13 @@
                 "punctuation.definition.annotation.envelope-pattern"
             ],
             "settings": {
-                "foreground": "#FF00FF"
+                "foreground": "#c051a2"
+            }
+        },
+        {
+            "scope": "keyword.other.envelope-pattern",
+            "settings": {
+                "foreground": "#1661e1"
             }
         },
         {
