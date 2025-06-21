@@ -1,4 +1,4 @@
-```envelope
+```envpat
 LEAF
 ARRAY({1,2})
 BOOL

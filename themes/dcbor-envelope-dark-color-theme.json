@@ -4,7 +4,6 @@
     "type": "dark",
     "colors": {},
     "tokenColors": [
-        // Standard language scopes for JSON, C, and others
         {
             "scope": [
                 "string.quoted.double",
@@ -75,7 +74,6 @@
                 "foreground": "#569CD6"
             }
         },
-        // Your custom scopes for dcbor-envelope
         {
             "scope": [
                 "string.quoted.double.dcbor",

@@ -1,14 +1,52 @@
 {
   "scopeName": "source.envelope-pattern",
+  "name": "Envelope Pattern",
   "patterns": [
     {
-      "comment": "Regex patterns with optional flags - override dcbor comment handling",
-      "name": "string.regexp.envelope-pattern",
-      "match": "\\/(?:[^\\/\\n\\\\]|\\\\.)+\\/[gimsuxy]*"
+      "comment": "Test pattern - highlight everything as string to verify grammar is working",
+      "match": "\\w+",
+      "name": "string.test.envelope-pattern"
     },
     {
-      "comment": "Include base dCBOR grammar patterns",
-      "include": "source.dcbor-envelope"
+      "include": "#parenthesized-with-regex"
+    },
+    {
+      "include": "#dcbor-base"
     }
-  ]
+  ],
+  "repository": {
+    "parenthesized-with-regex": {
+      "patterns": [
+        {
+          "comment": "Parenthesized expressions with regex support",
+          "begin": "\\(",
+          "end": "\\)",
+          "beginCaptures": {
+            "0": {"name": "punctuation.parenthesis.begin.envelope-pattern"}
+          },
+          "endCaptures": {
+            "0": {"name": "punctuation.parenthesis.end.envelope-pattern"}
+          },
+          "patterns": [
+            {
+              "comment": "Regex patterns with optional flags inside parentheses",
+              "match": "/([^/\\\\\\n]|\\\\.)+/[gimsuxy]*",
+              "name": "string.regexp.envelope-pattern"
+            },
+            {
+              "include": "$self"
+            }
+          ]
+        }
+      ]
+    },
+    "dcbor-base": {
+      "patterns": [
+        {
+          "comment": "Include all patterns from the base dcbor-envelope grammar",
+          "include": "source.dcbor-envelope"
+        }
+      ]
+    }
+  }
 }
