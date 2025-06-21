@@ -5,14 +5,16 @@ This extension provides syntax highlighting for:
 - CBOR (Concise Binary Object Representation)
 - Deterministic CBOR (dCBOR)
 - Gordian Envelope notation
+- Gordian Envelope pattern expressions
 
-It provides a single syntax highlighting grammar that supports all three formats, allowing you to work with CBOR diagnostic notation, dCBOR, and Envelope notation seamlessly.
+The first three above use the same syntax highlighting grammar, allowing you to work with CBOR diagnostic notation, dCBOR, and Envelope notation seamlessly. The last one uses a different grammar, but is still closely related to the first three.
 
 Filename extensions supported:
 
 - `.cbor`
 - `.dcbor`
 - `.envelope`
+- `.envpat`
 
 Opening a file with any of these extensions will apply the same syntax highlighting, and blocks of code in these formats can be collapsed in the editor.
 
@@ -21,6 +23,7 @@ Markdown code fences supported:
 - ` ```cbor`
 - ` ```dcbor`
 - ` ```envelope`
+- ` ```envpat`
 
 Blocks of code in Markdown will be highlighted, but cannot be collapsed in the editor.
 
