@@ -48,3 +48,7 @@ code --install-extension dcbor-envelope-0.1.0.vsix
 3. Click on the "..." menu at the top-right of the Extensions view.
 4. Select "Install from VSIX...".
 5. Navigate to and select your VSIX file.
+
+## Resources
+
+- [Sublime Text Scope Naming](https://www.sublimetxt.com/docs/scope_naming.html)

@@ -107,7 +107,10 @@
             }
         },
         {
-            "scope": "keyword.operator.envelope-pattern",
+            "scope": [
+                "keyword.operator.envelope-pattern",
+                "keyword.operator.ellipsis.dcbor"
+            ],
             "settings": {
                 "foreground": "#529815"
             }
@@ -238,8 +241,7 @@
         {
             "scope": [
                 "comment.line.number-sign.dcbor",
-                "comment.block.inline.dcbor",
-                "comment.line.ellipsis.dcbor"
+                "comment.block.inline.dcbor"
             ],
             "settings": {
                 "foreground": "#979696"
