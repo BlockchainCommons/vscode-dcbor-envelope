@@ -113,6 +113,15 @@
             }
         },
         {
+            "scope": [
+                "variable.annotation.envelope-pattern",
+                "punctuation.definition.annotation.envelope-pattern"
+            ],
+            "settings": {
+                "foreground": "#FF00FF"
+            }
+        },
+        {
             "scope": "constant.numeric.dcbor, constant.numeric.special.dcbor, constant.numeric.hex.dcbor, constant.numeric.binary.dcbor, constant.numeric.octal.dcbor",
             "settings": {
                 "foreground": "#34A5DA"
