@@ -16,7 +16,9 @@
   "scripts": {
     "build": "tsc -p ./",
     "test": "jest",
-    "dev": "code --extensionDevelopmentPath=$(pwd)"
+    "dev": "code --extensionDevelopmentPath=$(pwd)",
+    "package": "vsce package",
+    "install": "vsce package && code --install-extension dcbor-envelope-0.1.0.vsix"
   },
   "keywords": ["syntax", "dcbor", "envelope", "cbor"],
   "license": "BSD-2-Clause-Patent",
