@@ -103,7 +103,13 @@
                 "string.regexp.envelope-pattern"
             ],
             "settings": {
-                "foreground": "#CC0000"
+                "foreground": "#FF4444"
+            }
+        },
+        {
+            "scope": "keyword.operator.envelope-pattern",
+            "settings": {
+                "foreground": "#00FF00"
             }
         },
         {
