@@ -237,7 +237,7 @@ test('tokenize bare hex numbers', async () => {
   expect(scopes).toContain('constant.numeric.dcbor');
 });
 
-test('tokenize UR literals', async () => {
+test('tokenize URI literals', async () => {
   const grammarPath = path.join(__dirname, '..', 'syntaxes', 'dcbor-envelope.tmLanguage.json');
   const grammarContent = fs.readFileSync(grammarPath, 'utf8');
   const registry = new Registry({
@@ -247,10 +247,23 @@ test('tokenize UR literals', async () => {
   const grammar = await registry.loadGrammar('source.dcbor-envelope');
   if (!grammar) throw new Error('Grammar failed to load');
 
-  const line = 'ur:envelope/abcd';
-  const { tokens } = grammar.tokenizeLine(line, INITIAL);
-  const scopes = tokens.flatMap(t => t.scopes);
-  expect(scopes).toContain('constant.other.ur.dcbor');
+  // Test original ur: scheme
+  const urLine = 'ur:envelope/abcd';
+  const urTokens = grammar.tokenizeLine(urLine, INITIAL);
+  const urScopes = urTokens.tokens.flatMap(t => t.scopes);
+  expect(urScopes).toContain('constant.other.uri.dcbor');
+
+  // Test https: scheme
+  const httpsLine = 'https://example.com/path';
+  const httpsTokens = grammar.tokenizeLine(httpsLine, INITIAL);
+  const httpsScopes = httpsTokens.tokens.flatMap(t => t.scopes);
+  expect(httpsScopes).toContain('constant.other.uri.dcbor');
+
+  // Test mailto: scheme
+  const mailtoLine = 'mailto:user@example.com';
+  const mailtoTokens = grammar.tokenizeLine(mailtoLine, INITIAL);
+  const mailtoScopes = mailtoTokens.tokens.flatMap(t => t.scopes);
+  expect(mailtoScopes).toContain('constant.other.uri.dcbor');
 });
 
 test('tokenize envelope keywords', async () => {
