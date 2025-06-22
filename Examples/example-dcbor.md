@@ -94,20 +94,20 @@ Unit
         ]
     ]
 )
+```
 
+```dcbor
 300(
     {
-        1:
-        h'59f2293a5bce7d4de59e71b4207ac5d2',
-        2:
-        1(1614124800),
-        3:
-        "Dark Purple Aqua Love",
-        4:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+        1: h'59f2293a5bce7d4de59e71b4207ac5d2',
+        2: 1(1614124800),
+        3: "Dark Purple Aqua Love",
+        4: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
     }
 )
+```
 
+```dcbor
 # Examples from RFC8949
 # https://www.rfc-editor.org/rfc/rfc8949.html#name-diagnostic-notation
 

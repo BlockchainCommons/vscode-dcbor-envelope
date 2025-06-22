@@ -1,4 +1,9 @@
-# VS Code Syntax‑Highlighting Extension
+#  CBOR, dCBOR, and Gordian Envelope Syntax Highlighting
+
+by Wolf McNally\
+Blockchain Commons
+
+---
 
 This extension provides syntax highlighting for:
 
@@ -35,3 +40,11 @@ The extension provides two color themes that provide a much more specific look f
 - `dCBOR Envelope Light`
 
 These themes are designed to enhance the readability of dCBOR and Envelope files, but they must be activated manually from the Command Palette (`Cmd+Shift+P`) by selecting `Preferences: Color Theme` and choosing one of the themes. They can also be activated from the extension info page in the Extensions view.
+
+![dCBOR Example](images/dcbor_example.png)
+
+![Gordian Envelope Example](images/envelope_example.png)
+
+![Gordian Envelope Tree Example](images/envelope_tree_example.png)
+
+![Gordian Envelope Pattern Example](images/envpat_example.png)

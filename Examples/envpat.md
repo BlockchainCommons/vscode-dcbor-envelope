@@ -113,7 +113,11 @@ CBOR(1("hi"))
 BOOL(true)|BOOL(false)
 BOOL(true) & BOOL(false)
 BOOL(true)>BOOL(false)
-ANY > BOOL(true) & BOOL(false) > NONE | ANY > BOOL(true) & BOOL(false) > ANY
+ANY > BOOL(true) & BOOL(false) > NONE | ANY > BOOL(true) & BOOL(false) >
+```
+
+```envpat
+ANY
 !TEXT("hi")
 !ANY & NONE
 SEARCH(TEXT)

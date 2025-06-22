@@ -25,7 +25,9 @@
     'note': "Signed by Example Electrical Engineering Board"
     'signed': Signature
 ]
+```
 
+```envelope
 Bytes(16) [
     'isA': 'Seed'
     'attachment': {
@@ -43,6 +45,7 @@ Bytes(16) [
     'name': "Alice's Seed"
     'note': "This is the note."
 ]
+```
 
 "subject" [
     "predicate" [
