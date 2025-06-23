@@ -17,7 +17,8 @@ This block uses our syntax highlighting:
 ]
 ```
 
-Now notice this JSON block is NOT highlighted!
+Now notice this JSON block appearing after our block
+is NOT highlighted!
 
 ```json
 {
