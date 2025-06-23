@@ -47,6 +47,7 @@ Bytes(16) [
 ]
 ```
 
+```envelope
 "subject" [
     "predicate" [
         "predicate-predicate": "predicate-object"

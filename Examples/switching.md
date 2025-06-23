@@ -1,5 +1,6 @@
+# Switching Syntax Highlighting
 
-Here is some highlighted JSON:
+Ensures proper scoping of this extension's syntax highlighting.
 
 ```json
 {
@@ -8,8 +9,6 @@ Here is some highlighted JSON:
     }
 }
 ```
-
-This block uses our syntax highlighting:
 
 ```envelope
 "Alice" [
@@ -17,13 +16,44 @@ This block uses our syntax highlighting:
 ]
 ```
 
-Now notice this JSON block appearing after our block
-is NOT highlighted!
-
 ```json
 {
     "Alice": {
         "knows": "Bob"
     }
 }
+```
+
+```envelope
+"Alice" [
+    "knows": "Bob"
+]
+```
+
+```swift
+let envelope: Envelope = [
+    "Alice": [
+        "knows": "Bob"
+    ]
+]
+```
+
+```envelope
+"Alice" [
+    "knows": "Bob"
+]
+```
+
+```python
+envelope = {
+    "Alice": {
+        "knows": "Bob"
+    }
+}
+```
+
+```envelope
+"Alice" [
+    "knows": "Bob"
+]
 ```
