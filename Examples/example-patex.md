@@ -204,8 +204,8 @@ encrypted
 compressed
 pred
 pred(text)
-subject
-subject(text)
+subj
+subj(text)
 wrapped
 unwrap
 
@@ -231,59 +231,59 @@ search(text)
 text -> text -> text
 
 search(assertobj(text|number))
-search(assertpred("firstName")>OBJ("James"))
-search(@cap(assertpred("firstName")>OBJ("James")))
+search(assertpred("firstName")>obj("James"))
+search(@cap(assertpred("firstName")>obj("James")))
 search(node({13}))
 digest(a1b2c3)&(!obscured)
 (wrapped)*>node
 search((wrapped)*>node)
-search(ELIDED)
+search(elided)
 @num(42)
 @num(42)|@num(>40)
 @outer(@inner(42))
 @n(2)
 true
 "Hello"
-TEXT(/h.*o/)
+/h.*o/
 42
 >=5
 1...3
 NaN
 leaf
-ARRAY({2,4})
-BSTR(h'0102')
-BSTR(/abc/)
-DATE(2023-12-24...2023-12-26)
-DATE(/2023-.*/)
-MAP({2,4})
-NULL
-TAG(date)
-TAG(/da.*/)
-KNOWN('date')
-KNOWN(/da.*/)
-CBOR([1, 2, 3])
-CBOR({1: 2})
-CBOR(1("hi"))
+[{2,4}]
+h'0102'
+bstr'/abc/'
+date'2023-12-24...2023-12-26'
+date'/2023-.*/'
+{{2,4}}
+null
+tagged(date, *)
+tagged(/da.*/, *)
+'date'
+'/da.*/'
+cbor([1, 2, 3])
+cbor({1: 2})
+cbor(1("hi"))
 true | false
 true & false
-true > false
-* > true & false > NONE | * > true & false >
+true -> false
+* -> true & false > !* | * > true & false >
 ```
 
 ```patex
 *
 !"hi"
-!* & NONE
+!* & *
 search(text)
 (wrapped)*
 (number){2,4}+
 @outer(@inner("hi"))
-UNWRAP(node)
-SUBJECT("hi")
+unwrap(node)
+subj("hi")
 assertpred("hi")
-OBJ ( "hi" )
+obj ( "hi" )
 node
-(UNWRAP)*>node
-@cap((wrapped)*)>UNWRAP>node
-@cap((wrapped>UNWRAP)*)>node
+(unwrap)*>node
+@cap((wrapped)*)>unwrap>node
+@cap((wrapped>unwrap)*)>node
 ```

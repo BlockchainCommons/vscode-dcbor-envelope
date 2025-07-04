@@ -55,8 +55,13 @@
     "envelope-operators": {
       "patterns": [
         {
-          "comment": "Envelope pattern operators",
-          "match": "[&|!*?+>]|->|<=|>=|<",
+          "comment": "Comparison operators with numbers",
+          "match": "(?<![a-zA-Z0-9])(>=|<=|>|<)(?=\\s*[0-9])",
+          "name": "keyword.operator.envelope-pattern"
+        },
+        {
+          "comment": "General envelope pattern operators",
+          "match": "[&|!*?+]|->",
           "name": "keyword.operator.envelope-pattern"
         }
       ]
