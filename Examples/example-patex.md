@@ -1,5 +1,17 @@
 # Gordian Pattern Expression Languages (patex)
 
+## Patex placeholders:
+
+```patex
+
+patex
+dcbor-patex
+envelope-patex
+hex
+iso-date
+
+```
+
 ## dCBOR Patex
 
 ### Value Patterns
@@ -182,9 +194,9 @@ number
 <23
 NaN
 tagged
-tagged(4)
-tagged(date)
-tagged(/da.*/)
+tagged(4, *)
+tagged(date, text)
+tagged(/da.*/, number)
 text
 "Hello"
 /h.*o/
