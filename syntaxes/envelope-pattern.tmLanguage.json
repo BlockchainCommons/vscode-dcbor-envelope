@@ -9,6 +9,9 @@
       "include": "#prefixed-strings"
     },
     {
+      "include": "#bare-quoted-regex"
+    },
+    {
       "include": "#envelope-keywords"
     },
     {
@@ -53,7 +56,7 @@
       "patterns": [
         {
           "comment": "Envelope pattern operators",
-          "match": "[&|!*?+>]|<=|>=|<",
+          "match": "[&|!*?+>]|->|<=|>=|<",
           "name": "keyword.operator.envelope-pattern"
         }
       ]
@@ -61,7 +64,17 @@
     "prefixed-regex-strings": {
       "patterns": [
         {
-          "comment": "Prefixed single-quoted strings containing regex patterns",
+          "comment": "Prefixed single-quoted strings containing regex patterns with keyword prefixes",
+          "match": "\\b(leaf|bool|bstr|cbor|date|known|number|tagged|text|assert|assertpred|assertobj|digest|node|obj|obscured|elided|encrypted|compressed|pred|subj|wrapped|unwrap|search)(')(/[^/\\\\\\n]*(?:\\\\.[^/\\\\\\n]*)*/[gimsuxy]*)(')",
+          "captures": {
+            "1": {"name": "keyword.other.envelope-pattern"},
+            "2": {"name": "punctuation.definition.string.begin.envelope-pattern"},
+            "3": {"name": "string.regexp.envelope-pattern"},
+            "4": {"name": "punctuation.definition.string.end.envelope-pattern"}
+          }
+        },
+        {
+          "comment": "Prefixed single-quoted strings containing regex patterns with non-keyword prefixes",
           "match": "([a-zA-Z_][a-zA-Z0-9_]*)(')(/[^/\\\\\\n]*(?:\\\\.[^/\\\\\\n]*)*/[gimsuxy]*)(')",
           "captures": {
             "1": {"name": "storage.type.string.envelope-pattern"},
@@ -75,12 +88,22 @@
     "prefixed-strings": {
       "patterns": [
         {
-          "comment": "Prefixed single-quoted strings (non-regex)",
-          "match": "([a-zA-Z_][a-zA-Z0-9_]*)(')([^'/][^'\\\\]*(?:\\\\.[^'\\\\]*)*)(')",
+          "comment": "Prefixed single-quoted strings with keyword prefixes",
+          "match": "\\b(leaf|bool|bstr|cbor|date|known|number|tagged|text|assert|assertpred|assertobj|digest|node|obj|obscured|elided|encrypted|compressed|pred|subj|wrapped|unwrap|search)(')([^'\\\\]*(?:\\\\.[^'\\\\]*)*)(')",
+          "captures": {
+            "1": {"name": "keyword.other.envelope-pattern"},
+            "2": {"name": "punctuation.definition.string.begin.envelope-pattern"},
+            "3": {"name": "string.quoted.prefixed.envelope-pattern"},
+            "4": {"name": "punctuation.definition.string.end.envelope-pattern"}
+          }
+        },
+        {
+          "comment": "Prefixed single-quoted strings with non-keyword prefixes",
+          "match": "([a-zA-Z_][a-zA-Z0-9_]*)(')([^'\\\\]*(?:\\\\.[^'\\\\]*)*)(')",
           "captures": {
             "1": {"name": "storage.type.string.envelope-pattern"},
             "2": {"name": "punctuation.definition.string.begin.envelope-pattern"},
-            "3": {"name": "string.quoted.single.envelope-pattern"},
+            "3": {"name": "string.quoted.prefixed.envelope-pattern"},
             "4": {"name": "punctuation.definition.string.end.envelope-pattern"}
           }
         }
@@ -92,6 +115,19 @@
           "comment": "Bare regex patterns",
           "match": "/([^/\\\\\\n]|\\\\.)+/[gimsuxy]*",
           "name": "string.regexp.envelope-pattern"
+        }
+      ]
+    },
+    "bare-quoted-regex": {
+      "patterns": [
+        {
+          "comment": "Bare single-quoted strings containing regex patterns",
+          "match": "(')(/[^/\\\\\\n]*(?:\\\\.[^/\\\\\\n]*)*/[gimsuxy]*)(')",
+          "captures": {
+            "1": {"name": "punctuation.definition.string.begin.envelope-pattern"},
+            "2": {"name": "string.regexp.envelope-pattern"},
+            "3": {"name": "punctuation.definition.string.end.envelope-pattern"}
+          }
         }
       ]
     },

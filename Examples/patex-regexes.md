@@ -12,4 +12,7 @@ baz(/regex/)
 h'/abc/'
 digest'/regex/'
 date'/2023-.*/'
+
+# Regexes in bare single-quoted strings
+'/abc/'
 ```

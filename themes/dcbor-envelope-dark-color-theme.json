@@ -92,7 +92,7 @@
             }
         },
         {
-            "scope": "string.quoted.prefixed.dcbor, string.quoted.prefixed.multiline.dcbor, entity.name.tag.dcbor",
+            "scope": "string.quoted.prefixed.dcbor, string.quoted.prefixed.multiline.dcbor, entity.name.tag.dcbor, string.quoted.prefixed.envelope-pattern",
             "settings": {
                 "foreground": "#4EC9B0"
             }
