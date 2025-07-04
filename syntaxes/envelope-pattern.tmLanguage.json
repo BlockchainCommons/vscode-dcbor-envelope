@@ -37,7 +37,7 @@
     "envelope-keywords": {
       "patterns": [
         {
-          "comment": "Envelope pattern keywords",
+          "comment": "Patex keywords",
           "match": "\\b(?:leaf|bool|bstr|cbor|date|known|number|tagged|text|assert|assertpred|assertobj|digest|node|obj|obscured|elided|encrypted|compressed|pred|subj|wrapped|unwrap|search)\\b",
           "name": "keyword.other.envelope-pattern"
         }
