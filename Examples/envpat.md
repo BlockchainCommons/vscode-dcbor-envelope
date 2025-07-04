@@ -1,16 +1,168 @@
+# Gordian Pattern Expression Languages (patex)
+
+## dCBOR Patex
+
+### Value Patterns
+
 ```envpat
-LEAF
-ARRAY({1,2})
-BOOL
-BOOL(true)
-BOOL(false)
-BSTR
-BSTR(h'0102')
-BSTR(/abc/)
-CBOR([1, 2, 3])
-CBOR(ur:envelope/aabbccdd)
-DATE
-DATE(2023-12-24...2023-12-26)
+# Booleans
+bool
+true
+false
+
+# Binary Strings
+bstr
+h'0102'
+h'(/abc/)
+
+# Dates
+date
+date'2023-12-24'
+date'2023-12-24...'
+date'...2023-12-26'
+date'2023-12-24...2023-12-26'
+date'/2023-.*/'
+
+# Known Values
+known
+'32'
+'name'
+'/regex/'
+
+# Null
+null
+
+# Numbers
+number
+42
+10...20
+>=5
+<=5
+>23
+<23
+NaN
+Infinity
+-Infinity
+
+# Text
+text
+"Hello"
+/Hello/
+```
+
+### Structure Patterns
+
+```envpat
+# Digests
+digest
+digest'00112233'
+digest'ur:digest/aabbccdd'
+digest'/regex/'
+
+# Arrays
+[*]
+[{3}]
+[{3,5}]
+[{3,}]
+[42]
+["a", "b", "c"]
+[(*)*, 42, (*)*]
+[42, (*)*]
+[(*)*, 42]
+
+# Maps
+{*}
+{{3}}
+{{3,5}}
+{{3,}}
+{text: *, number: 42}
+
+# Tagged Values
+tagged
+tagged(42, "value")
+tagged(date, 1234)
+tagged(/regex/, "value")
+```
+
+### Meta Patterns
+
+```envpat
+# And
+>=52 & <100
+
+# Any
+*
+
+# Capture
+@name(text)
+
+# Not
+!"hi"
+
+# Or
+text | number | date
+
+# Repeat
+( 42 )
+( 42 )*
+( 42 )?
+( 42 )+
+( 42 ){3, 5}
+( 42 )*?
+( 42 )??
+( 42 )+?
+( 42 ){3, 5}?
+( 42 )*+
+( 42 )?+
+( 42 )++
+( 42 ){3, 5}+
+
+# Search
+search(text)
+```
+
+## Envelope Patterns
+
+### CBOR Pattern
+```envpat
+cbor("text")
+```
+
+### Structure Patterns
+
+```envpat
+leaf
+assert
+assertpred ( patex )
+assertobj ( patex )
+digest ( hex )
+digest ( ur:digest/value )
+node
+node ( { n, m } )
+obj
+obj ( patex )
+obscured
+elided
+encrypted
+compressed
+pred
+pred ( patex )
+subj
+subj ( patex )
+wrapped
+unwrap
+```
+
+```envpat
+leaf
+[{1,2}]
+bool
+true
+false
+cbor([1, 2, 3])
+cbor(ur:envelope/aabbccdd)
+date
+date'2023-12-24...2023-12-26'
 DATE(/2023-.*/)
 KNOWN
 KNOWN('value')
@@ -95,7 +247,7 @@ NUMBER(42)
 NUMBER(>=5)
 NUMBER(1...3)
 NUMBER(NaN)
-LEAF
+leaf
 ARRAY({2,4})
 BSTR(h'0102')
 BSTR(/abc/)
