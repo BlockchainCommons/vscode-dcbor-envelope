@@ -27,6 +27,7 @@ UNWRAP -> unwrap
 
 # These keywords are now removed and should display like the unclassified word `FOO`:
 
+true false null
 FOO
 
 ARRAY -> # removed

@@ -29,7 +29,7 @@
       "patterns": [
         {
           "comment": "Envelope pattern keywords",
-          "match": "\\b(?:LEAF|ARRAY|BOOL|BSTR|CBOR|DATE|KNOWN|MAP|NUMBER|TAG|TEXT|ASSERT|ASSERTPRED|ASSERTOBJ|DIGEST|NODE|OBJ|OBSCURED|ELIDED|ENCRYPTED|COMPRESSED|PRED|SUBJECT|WRAPPED|UNWRAP|ANY|NONE|SEARCH|NULL|TEST)\\b",
+          "match": "\\b(?:leaf|bool|bstr|cbor|date|known|number|tagged|text|assert|assertpred|assertobj|digest|node|obj|obscured|elided|encrypted|compressed|pred|subj|wrapped|unwrap|search)\\b",
           "name": "keyword.other.envelope-pattern"
         }
       ]
