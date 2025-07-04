@@ -405,26 +405,47 @@ test('tokenize envelope pattern regexes', async () => {
       description: 'regex in prefixed single-quoted string',
       expectRegex: true,
       expectPrefix: true,
-      expectQuotes: true
+      expectQuotes: true,
+      expectNonKeywordPrefix: true
     },
     {
       text: "digest'/regex/'",
       description: 'regex in digest prefixed string',
       expectRegex: true,
       expectPrefix: true,
-      expectQuotes: true
+      expectQuotes: true,
+      expectKeywordPrefix: true
     },
     {
       text: "date'/2023-.*/'",
       description: 'regex in date prefixed string',
       expectRegex: true,
       expectPrefix: true,
-      expectQuotes: true
+      expectQuotes: true,
+      expectKeywordPrefix: true
     },
     {
       text: '(/regex/)',
       description: 'regex in parentheses',
       expectRegex: true
+    },
+    {
+      text: "h'/<hex-regex>/'",
+      description: 'regex with placeholder in prefixed string',
+      expectRegex: true,
+      expectPrefix: true,
+      expectQuotes: true,
+      expectNonKeywordPrefix: true,
+      expectPlaceholder: true
+    },
+    {
+      text: "date'/<iso-date-pattern>/'",
+      description: 'regex with placeholder in keyword prefixed string',
+      expectRegex: true,
+      expectPrefix: true,
+      expectQuotes: true,
+      expectKeywordPrefix: true,
+      expectPlaceholder: true
     }
   ];
 
@@ -437,11 +458,22 @@ test('tokenize envelope pattern regexes', async () => {
     }
 
     if (testCase.expectPrefix) {
-      expect(scopes.some(scope => scope.includes('storage.type.string'))).toBe(true);
+      if (testCase.expectKeywordPrefix) {
+        expect(scopes.some(scope => scope.includes('keyword.other.patex'))).toBe(true);
+      } else if (testCase.expectNonKeywordPrefix) {
+        expect(scopes.some(scope => scope.includes('storage.type.string'))).toBe(true);
+      } else {
+        // For backward compatibility, check for either
+        expect(scopes.some(scope => scope.includes('storage.type.string') || scope.includes('keyword.other.patex'))).toBe(true);
+      }
     }
 
     if (testCase.expectQuotes) {
       expect(scopes.some(scope => scope.includes('punctuation.definition.string'))).toBe(true);
+    }
+
+    if (testCase.expectPlaceholder) {
+      expect(scopes.some(scope => scope.includes('keyword.placeholder'))).toBe(true);
     }
 
     console.log(`✓ ${testCase.description}: ${testCase.text}`);
