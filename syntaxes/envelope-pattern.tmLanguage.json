@@ -15,6 +15,9 @@
       "include": "#envelope-keywords"
     },
     {
+      "include": "#syntactic-placeholders"
+    },
+    {
       "include": "#envelope-annotations"
     },
     {
@@ -37,6 +40,15 @@
           "comment": "Envelope pattern keywords",
           "match": "\\b(?:leaf|bool|bstr|cbor|date|known|number|tagged|text|assert|assertpred|assertobj|digest|node|obj|obscured|elided|encrypted|compressed|pred|subj|wrapped|unwrap|search)\\b",
           "name": "keyword.other.envelope-pattern"
+        }
+      ]
+    },
+    "syntactic-placeholders": {
+      "patterns": [
+        {
+          "comment": "Syntactic placeholder keywords",
+          "match": "\\b(?:patex|dcbor-patex|envelope-patex|hex|iso-date)\\b",
+          "name": "keyword.placeholder.patex"
         }
       ]
     },

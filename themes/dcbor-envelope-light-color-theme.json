@@ -148,6 +148,13 @@
             }
         },
         {
+            "scope": "keyword.placeholder.patex",
+            "settings": {
+                "foreground": "#000000",
+                "fontStyle": "italic"
+            }
+        },
+        {
             "scope": "constant.numeric.dcbor, constant.numeric.special.dcbor, constant.numeric.hex.dcbor, constant.numeric.binary.dcbor, constant.numeric.octal.dcbor",
             "settings": {
                 "foreground": "#0E76B0"

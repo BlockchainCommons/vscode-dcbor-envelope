@@ -1,15 +1,13 @@
 # Gordian Pattern Expression Languages (patex)
 
-## Patex placeholders:
+## Syntactic placeholders:
 
 ```patex
-
-patex
-dcbor-patex
-envelope-patex
-hex
-iso-date
-
+<patex>
+<dcbor-patex>
+<envelope-patex>
+<hex>
+<iso-date>
 ```
 
 ## dCBOR Patex
@@ -243,12 +241,12 @@ search(text)
 text -> text -> text
 
 search(assertobj(text|number))
-search(assertpred("firstName")>obj("James"))
-search(@cap(assertpred("firstName")>obj("James")))
+search(assertpred("firstName") -> obj("James"))
+search(@cap(assertpred("firstName") -> obj("James")))
 search(node({13}))
 digest(a1b2c3)&(!obscured)
-(wrapped)*>node
-search((wrapped)*>node)
+(wrapped)* -> node
+search((wrapped)* -> node)
 search(elided)
 @num(42)
 @num(42)|@num(>40)
