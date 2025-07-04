@@ -108,6 +108,23 @@
         },
         {
             "scope": [
+                "storage.type.string.envelope-pattern"
+            ],
+            "settings": {
+                "foreground": "#0D7D65"
+            }
+        },
+        {
+            "scope": [
+                "punctuation.definition.string.begin.envelope-pattern",
+                "punctuation.definition.string.end.envelope-pattern"
+            ],
+            "settings": {
+                "foreground": "#0D7D65"
+            }
+        },
+        {
+            "scope": [
                 "keyword.operator.envelope-pattern",
                 "keyword.operator.ellipsis.dcbor"
             ],

@@ -59,10 +59,12 @@
       "patterns": [
         {
           "comment": "Prefixed single-quoted strings containing regex patterns",
-          "match": "([a-zA-Z_][a-zA-Z0-9_]*)'(/[^/\\\\\\n]*(?:\\\\.[^/\\\\\\n]*)*/[gimsuxy]*)'",
+          "match": "([a-zA-Z_][a-zA-Z0-9_]*)(')(/[^/\\\\\\n]*(?:\\\\.[^/\\\\\\n]*)*/[gimsuxy]*)(')",
           "captures": {
             "1": {"name": "storage.type.string.envelope-pattern"},
-            "2": {"name": "string.regexp.envelope-pattern"}
+            "2": {"name": "punctuation.definition.string.begin.envelope-pattern"},
+            "3": {"name": "string.regexp.envelope-pattern"},
+            "4": {"name": "punctuation.definition.string.end.envelope-pattern"}
           }
         }
       ]

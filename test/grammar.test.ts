@@ -392,34 +392,58 @@ test('tokenize envelope pattern regexes', async () => {
   const testCases = [
     {
       text: 'tagged(/regex/, "value")',
-      description: 'regex inside function call'
+      description: 'regex inside function call',
+      expectRegex: true
     },
     {
       text: '/Hello/',
-      description: 'bare regex'
+      description: 'bare regex',
+      expectRegex: true
     },
     {
       text: "h'/abc/'",
-      description: 'regex in prefixed single-quoted string'
+      description: 'regex in prefixed single-quoted string',
+      expectRegex: true,
+      expectPrefix: true,
+      expectQuotes: true
     },
     {
       text: "digest'/regex/'",
-      description: 'regex in digest prefixed string'
+      description: 'regex in digest prefixed string',
+      expectRegex: true,
+      expectPrefix: true,
+      expectQuotes: true
     },
     {
       text: "date'/2023-.*/'",
-      description: 'regex in date prefixed string'
+      description: 'regex in date prefixed string',
+      expectRegex: true,
+      expectPrefix: true,
+      expectQuotes: true
     },
     {
       text: '(/regex/)',
-      description: 'regex in parentheses'
+      description: 'regex in parentheses',
+      expectRegex: true
     }
   ];
 
   for (const testCase of testCases) {
     const { tokens } = grammar.tokenizeLine(testCase.text, INITIAL);
     const scopes = tokens.flatMap(t => t.scopes);
-    expect(scopes.some(scope => scope.includes('string.regexp'))).toBe(true);
+
+    if (testCase.expectRegex) {
+      expect(scopes.some(scope => scope.includes('string.regexp'))).toBe(true);
+    }
+
+    if (testCase.expectPrefix) {
+      expect(scopes.some(scope => scope.includes('storage.type.string'))).toBe(true);
+    }
+
+    if (testCase.expectQuotes) {
+      expect(scopes.some(scope => scope.includes('punctuation.definition.string'))).toBe(true);
+    }
+
     console.log(`✓ ${testCase.description}: ${testCase.text}`);
   }
 });
