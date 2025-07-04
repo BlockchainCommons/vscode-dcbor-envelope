@@ -9,6 +9,12 @@
 <hex>
 <iso-date>
 <something-else>
+<ur:digest/value>
+
+h'<hex>'
+h'/<regex>/'
+"<text>"
+date'<iso-date>'
 ```
 
 ## dCBOR Patex
