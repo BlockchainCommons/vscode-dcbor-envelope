@@ -1,6 +1,6 @@
 {
-  "scopeName": "source.envelope-pattern",
-  "name": "Envelope Pattern",
+  "scopeName": "source.patex",
+  "name": "Patex",
   "patterns": [
     {
       "include": "#prefixed-regex-strings"
@@ -39,7 +39,7 @@
         {
           "comment": "Patex keywords",
           "match": "\\b(?:leaf|bool|bstr|cbor|date|known|number|tagged|text|assert|assertpred|assertobj|digest|node|obj|obscured|elided|encrypted|compressed|pred|subj|wrapped|unwrap|search)\\b",
-          "name": "keyword.other.envelope-pattern"
+          "name": "keyword.other.patex"
         }
       ]
     },
@@ -47,7 +47,7 @@
       "patterns": [
         {
           "comment": "Syntactic placeholders in angle brackets",
-          "match": "<[a-zA-Z0-9_-]+>",
+          "match": "<[a-zA-Z0-9_/:-]+>",
           "name": "keyword.placeholder.patex"
         }
       ]
@@ -58,8 +58,8 @@
           "comment": "Named captures (annotations) starting with @",
           "match": "(@)([a-zA-Z_][a-zA-Z0-9_]*)",
           "captures": {
-            "1": {"name": "punctuation.definition.annotation.envelope-pattern"},
-            "2": {"name": "variable.annotation.envelope-pattern"}
+            "1": {"name": "punctuation.definition.annotation.patex"},
+            "2": {"name": "variable.annotation.patex"}
           }
         }
       ]
@@ -69,12 +69,12 @@
         {
           "comment": "Comparison operators with numbers",
           "match": "(?<![a-zA-Z0-9])(>=|<=|>|<)(?=\\s*[0-9])",
-          "name": "keyword.operator.envelope-pattern"
+          "name": "keyword.operator.patex"
         },
         {
           "comment": "General envelope pattern operators",
           "match": "[&|!*?+]|->",
-          "name": "keyword.operator.envelope-pattern"
+          "name": "keyword.operator.patex"
         }
       ]
     },
@@ -84,20 +84,20 @@
           "comment": "Prefixed single-quoted strings containing regex patterns with keyword prefixes",
           "match": "\\b(leaf|bool|bstr|cbor|date|known|number|tagged|text|assert|assertpred|assertobj|digest|node|obj|obscured|elided|encrypted|compressed|pred|subj|wrapped|unwrap|search)(')(/[^/\\\\\\n]*(?:\\\\.[^/\\\\\\n]*)*/[gimsuxy]*)(')",
           "captures": {
-            "1": {"name": "keyword.other.envelope-pattern"},
-            "2": {"name": "punctuation.definition.string.begin.envelope-pattern"},
-            "3": {"name": "string.regexp.envelope-pattern"},
-            "4": {"name": "punctuation.definition.string.end.envelope-pattern"}
+            "1": {"name": "keyword.other.patex"},
+            "2": {"name": "punctuation.definition.string.begin.patex"},
+            "3": {"name": "string.regexp.patex"},
+            "4": {"name": "punctuation.definition.string.end.patex"}
           }
         },
         {
           "comment": "Prefixed single-quoted strings containing regex patterns with non-keyword prefixes",
           "match": "([a-zA-Z_][a-zA-Z0-9_]*)(')(/[^/\\\\\\n]*(?:\\\\.[^/\\\\\\n]*)*/[gimsuxy]*)(')",
           "captures": {
-            "1": {"name": "storage.type.string.envelope-pattern"},
-            "2": {"name": "punctuation.definition.string.begin.envelope-pattern"},
-            "3": {"name": "string.regexp.envelope-pattern"},
-            "4": {"name": "punctuation.definition.string.end.envelope-pattern"}
+            "1": {"name": "storage.type.string.patex"},
+            "2": {"name": "punctuation.definition.string.begin.patex"},
+            "3": {"name": "string.regexp.patex"},
+            "4": {"name": "punctuation.definition.string.end.patex"}
           }
         }
       ]
@@ -108,20 +108,20 @@
           "comment": "Prefixed single-quoted strings with keyword prefixes",
           "match": "\\b(leaf|bool|bstr|cbor|date|known|number|tagged|text|assert|assertpred|assertobj|digest|node|obj|obscured|elided|encrypted|compressed|pred|subj|wrapped|unwrap|search)(')([^'\\\\]*(?:\\\\.[^'\\\\]*)*)(')",
           "captures": {
-            "1": {"name": "keyword.other.envelope-pattern"},
-            "2": {"name": "punctuation.definition.string.begin.envelope-pattern"},
-            "3": {"name": "string.quoted.prefixed.envelope-pattern"},
-            "4": {"name": "punctuation.definition.string.end.envelope-pattern"}
+            "1": {"name": "keyword.other.patex"},
+            "2": {"name": "punctuation.definition.string.begin.patex"},
+            "3": {"name": "string.quoted.prefixed.patex"},
+            "4": {"name": "punctuation.definition.string.end.patex"}
           }
         },
         {
           "comment": "Prefixed single-quoted strings with non-keyword prefixes",
           "match": "([a-zA-Z_][a-zA-Z0-9_]*)(')([^'\\\\]*(?:\\\\.[^'\\\\]*)*)(')",
           "captures": {
-            "1": {"name": "storage.type.string.envelope-pattern"},
-            "2": {"name": "punctuation.definition.string.begin.envelope-pattern"},
-            "3": {"name": "string.quoted.prefixed.envelope-pattern"},
-            "4": {"name": "punctuation.definition.string.end.envelope-pattern"}
+            "1": {"name": "storage.type.string.patex"},
+            "2": {"name": "punctuation.definition.string.begin.patex"},
+            "3": {"name": "string.quoted.prefixed.patex"},
+            "4": {"name": "punctuation.definition.string.end.patex"}
           }
         }
       ]
@@ -131,7 +131,7 @@
         {
           "comment": "Bare regex patterns",
           "match": "/([^/\\\\\\n]|\\\\.)+/[gimsuxy]*",
-          "name": "string.regexp.envelope-pattern"
+          "name": "string.regexp.patex"
         }
       ]
     },
@@ -141,9 +141,9 @@
           "comment": "Bare single-quoted strings containing regex patterns",
           "match": "(')(/[^/\\\\\\n]*(?:\\\\.[^/\\\\\\n]*)*/[gimsuxy]*)(')",
           "captures": {
-            "1": {"name": "punctuation.definition.string.begin.envelope-pattern"},
-            "2": {"name": "string.regexp.envelope-pattern"},
-            "3": {"name": "punctuation.definition.string.end.envelope-pattern"}
+            "1": {"name": "punctuation.definition.string.begin.patex"},
+            "2": {"name": "string.regexp.patex"},
+            "3": {"name": "punctuation.definition.string.end.patex"}
           }
         }
       ]
@@ -155,16 +155,16 @@
           "begin": "\\(",
           "end": "\\)",
           "beginCaptures": {
-            "0": {"name": "punctuation.parenthesis.begin.envelope-pattern"}
+            "0": {"name": "punctuation.parenthesis.begin.patex"}
           },
           "endCaptures": {
-            "0": {"name": "punctuation.parenthesis.end.envelope-pattern"}
+            "0": {"name": "punctuation.parenthesis.end.patex"}
           },
           "patterns": [
             {
               "comment": "Regex patterns with optional flags inside parentheses",
               "match": "/([^/\\\\\\n]|\\\\.)+/[gimsuxy]*",
-              "name": "string.regexp.envelope-pattern"
+              "name": "string.regexp.patex"
             },
             {
               "include": "$self"

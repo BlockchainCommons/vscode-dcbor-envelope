@@ -114,19 +114,19 @@ tagged(/regex/, "value")
 text | number | date
 
 # Repeat
-( 42 )
-( 42 )*
-( 42 )?
-( 42 )+
-( 42 ){3, 5}
-( 42 )*?
-( 42 )??
-( 42 )+?
-( 42 ){3, 5}?
-( 42 )*+
-( 42 )?+
-( 42 )++
-( 42 ){3, 5}+
+( <patex> )
+( <patex> )*
+( <patex> )?
+( <patex> )+
+( <patex> ){3, 5}
+( <patex> )*?
+( <patex> )??
+( <patex> )+?
+( <patex> ){3, 5}?
+( <patex> )*+
+( <patex> )?+
+( <patex> )++
+( <patex> ){3, 5}+
 
 # Search
 search(text)
@@ -147,22 +147,22 @@ cbor(/regex/)
 ```patex
 leaf
 assert
-assertpred ( patex )
-assertobj ( patex )
-digest ( hex )
-digest ( ur:digest/value )
+assertpred ( <patex> )
+assertobj ( <patex> )
+digest ( <hex> )
+digest ( <ur:digest/value> )
 node
-node ( { n, m } )
+node ( <repeat> )
 obj
-obj ( patex )
+obj ( <patex> )
 obscured
 elided
 encrypted
 compressed
 pred
-pred ( patex )
+pred ( <patex> )
 subj
-subj ( patex )
+subj ( <patex> )
 wrapped
 unwrap
 ```

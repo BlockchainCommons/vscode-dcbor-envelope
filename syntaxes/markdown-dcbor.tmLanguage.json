@@ -105,10 +105,10 @@
           "name": "punctuation.definition.markdown"
         }
       },
-      "contentName": "source.envelope-pattern",
+      "contentName": "source.patex",
       "patterns": [
         {
-          "include": "source.envelope-pattern"
+          "include": "source.patex"
         }
       ]
     }

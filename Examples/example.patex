@@ -3,11 +3,11 @@
 
 ## Syntactic placeholders:
 
-patex
-dcbor-patex
-envelope-patex
-hex
-iso-date
+<patex>
+<dcbor-patex>
+<envelope-patex>
+<hex>
+<iso-date>
 
 ## dCBOR Patex
 

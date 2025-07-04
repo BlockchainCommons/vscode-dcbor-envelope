@@ -33,8 +33,8 @@
         "configuration": "./language-configuration.json"
       },
       {
-        "id": "envelope-pattern",
-        "aliases": ["Envelope Pattern", "patex"],
+        "id": "patex",
+        "aliases": ["Patex", "Envelope Pattern"],
         "extensions": [".patex"],
         "configuration": "./language-configuration.json"
       }
@@ -46,9 +46,9 @@
           "path": "./syntaxes/dcbor-envelope.tmLanguage.json"
         },
         {
-          "language": "envelope-pattern",
-          "scopeName": "source.envelope-pattern",
-          "path": "./syntaxes/envelope-pattern.tmLanguage.json"
+          "language": "patex",
+          "scopeName": "source.patex",
+          "path": "./syntaxes/patex.tmLanguage.json"
         },
         {
           "injectTo": ["text.html.markdown"],
@@ -58,9 +58,9 @@
             "meta.embedded.block.dcbor": "dcbor-envelope",
             "meta.embedded.block.envelope": "dcbor-envelope",
             "meta.embedded.block.cbor": "dcbor-envelope",
-            "meta.embedded.block.patex": "envelope-pattern",
+            "meta.embedded.block.patex": "patex",
             "source.dcbor-envelope": "dcbor-envelope",
-            "source.envelope-pattern": "envelope-pattern"
+            "source.patex": "patex"
           }
         }
       ],

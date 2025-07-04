@@ -369,12 +369,12 @@ test('tokenize hexadecimal floating point with binary exponent', async () => {
 });
 
 test('tokenize envelope pattern regexes', async () => {
-  const grammarPath = path.join(__dirname, '..', 'syntaxes', 'envelope-pattern.tmLanguage.json');
+  const grammarPath = path.join(__dirname, '..', 'syntaxes', 'patex.tmLanguage.json');
   const grammarContent = fs.readFileSync(grammarPath, 'utf8');
   const registry = new Registry({
     onigLib: Promise.resolve(onigLib),
     loadGrammar: async (scopeName: string) => {
-      if (scopeName === 'source.envelope-pattern') {
+      if (scopeName === 'source.patex') {
         return JSON.parse(grammarContent);
       }
       if (scopeName === 'source.dcbor-envelope') {
@@ -385,7 +385,7 @@ test('tokenize envelope pattern regexes', async () => {
       return null;
     }
   });
-  const grammar = await registry.loadGrammar('source.envelope-pattern');
+  const grammar = await registry.loadGrammar('source.patex');
   if (!grammar) throw new Error('Envelope pattern grammar failed to load');
 
   // Test cases that should be highlighted as regexes
