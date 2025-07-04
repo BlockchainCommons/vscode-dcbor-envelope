@@ -13,7 +13,7 @@ false
 # Binary Strings
 bstr
 h'0102'
-h'(/abc/)
+h'/abc/'
 
 # Dates
 date
