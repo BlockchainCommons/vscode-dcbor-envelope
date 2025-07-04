@@ -2,7 +2,7 @@
   "name": "dcbor-envelope",
   "displayName": "dCBOR-Envelope",
   "description": "Syntax highlighting for CBOR, dCBOR, and Gordian Envelope",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "publisher": "BlockchainCommons",
   "repository": {
     "type": "git",
@@ -19,7 +19,7 @@
     "test": "jest",
     "dev": "code --extensionDevelopmentPath=$(pwd)",
     "package": "vsce package",
-    "install": "tsc -p ./ && vsce package && code --install-extension dcbor-envelope-0.1.0.vsix"
+    "install": "tsc -p ./ && vsce package && code --install-extension dcbor-envelope-0.2.0.vsix"
   },
   "keywords": ["syntax", "dcbor", "envelope", "cbor", "gordian"],
   "license": "BSD-2-Clause-Patent",

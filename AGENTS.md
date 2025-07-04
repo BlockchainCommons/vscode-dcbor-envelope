@@ -33,12 +33,12 @@ npm install -g @vscode/vsce
 vsce package
 ```
 
-This will create a file like `dcbor-envelope-0.1.0.vsix` in your project directory.
+This will create a file like `dcbor-envelope-0.2.0.vsix` in your project directory.
 
 3. Install the VSIX file in your main VS Code:
 
 ```bash
-code --install-extension dcbor-envelope-0.1.0.vsix
+code --install-extension dcbor-envelope-0.2.0.vsix
 ```
 
 ### Install it from within VS Code

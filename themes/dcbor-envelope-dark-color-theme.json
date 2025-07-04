@@ -150,7 +150,7 @@
         {
             "scope": "keyword.placeholder.patex",
             "settings": {
-                "foreground": "#ffffff",
+                "foreground": "#7474bd",
                 "fontStyle": "italic"
             }
         },
