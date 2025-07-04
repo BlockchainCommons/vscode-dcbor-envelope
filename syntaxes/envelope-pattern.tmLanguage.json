@@ -3,6 +3,9 @@
   "name": "Envelope Pattern",
   "patterns": [
     {
+      "include": "#prefixed-regex-strings"
+    },
+    {
       "include": "#envelope-keywords"
     },
     {
@@ -10,9 +13,6 @@
     },
     {
       "include": "#envelope-operators"
-    },
-    {
-      "include": "#prefixed-regex-strings"
     },
     {
       "include": "#bare-regex"
