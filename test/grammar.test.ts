@@ -367,3 +367,59 @@ test('tokenize hexadecimal floating point with binary exponent', async () => {
     expect(scopes).toContain('constant.numeric.hex.dcbor');
   }
 });
+
+test('tokenize envelope pattern regexes', async () => {
+  const grammarPath = path.join(__dirname, '..', 'syntaxes', 'envelope-pattern.tmLanguage.json');
+  const grammarContent = fs.readFileSync(grammarPath, 'utf8');
+  const registry = new Registry({
+    onigLib: Promise.resolve(onigLib),
+    loadGrammar: async (scopeName: string) => {
+      if (scopeName === 'source.envelope-pattern') {
+        return JSON.parse(grammarContent);
+      }
+      if (scopeName === 'source.dcbor-envelope') {
+        const dcborGrammarPath = path.join(__dirname, '..', 'syntaxes', 'dcbor-envelope.tmLanguage.json');
+        const dcborGrammarContent = fs.readFileSync(dcborGrammarPath, 'utf8');
+        return JSON.parse(dcborGrammarContent);
+      }
+      return null;
+    }
+  });
+  const grammar = await registry.loadGrammar('source.envelope-pattern');
+  if (!grammar) throw new Error('Envelope pattern grammar failed to load');
+
+  // Test cases that should be highlighted as regexes
+  const testCases = [
+    {
+      text: 'tagged(/regex/, "value")',
+      description: 'regex inside function call'
+    },
+    {
+      text: '/Hello/',
+      description: 'bare regex'
+    },
+    {
+      text: "h'/abc/'",
+      description: 'regex in prefixed single-quoted string'
+    },
+    {
+      text: "digest'/regex/'",
+      description: 'regex in digest prefixed string'
+    },
+    {
+      text: "date'/2023-.*/'",
+      description: 'regex in date prefixed string'
+    },
+    {
+      text: '(/regex/)',
+      description: 'regex in parentheses'
+    }
+  ];
+
+  for (const testCase of testCases) {
+    const { tokens } = grammar.tokenizeLine(testCase.text, INITIAL);
+    const scopes = tokens.flatMap(t => t.scopes);
+    expect(scopes.some(scope => scope.includes('string.regexp'))).toBe(true);
+    console.log(`✓ ${testCase.description}: ${testCase.text}`);
+  }
+});
