@@ -50,6 +50,19 @@ text
 /Hello/
 ```
 
+```patex
+# Prefix is a keyword: prefix should be highlighted like a keyword
+digest
+digest'00112233' # keyword is not highlighted correctly
+
+# Prefix is a keyword: prefix should be highlighted like a keyword
+date
+date'2023-12-24' # keyword is not highlighted correctly
+
+# Prefix is NOT a keyword: prefix should not be highlighted like a keyword. So this is CORRECT:
+foo'bar'
+```
+
 ### Structure Patterns
 
 ```patex
@@ -125,7 +138,10 @@ search(text)
 
 ### CBOR Pattern
 ```patex
+cbor
 cbor("text")
+cbor(ur:digest/value)
+cbor(/regex/)
 ```
 
 ### Structure Patterns

@@ -6,6 +6,9 @@
       "include": "#prefixed-regex-strings"
     },
     {
+      "include": "#prefixed-strings"
+    },
+    {
       "include": "#envelope-keywords"
     },
     {
@@ -64,6 +67,20 @@
             "1": {"name": "storage.type.string.envelope-pattern"},
             "2": {"name": "punctuation.definition.string.begin.envelope-pattern"},
             "3": {"name": "string.regexp.envelope-pattern"},
+            "4": {"name": "punctuation.definition.string.end.envelope-pattern"}
+          }
+        }
+      ]
+    },
+    "prefixed-strings": {
+      "patterns": [
+        {
+          "comment": "Prefixed single-quoted strings (non-regex)",
+          "match": "([a-zA-Z_][a-zA-Z0-9_]*)(')([^'/][^'\\\\]*(?:\\\\.[^'\\\\]*)*)(')",
+          "captures": {
+            "1": {"name": "storage.type.string.envelope-pattern"},
+            "2": {"name": "punctuation.definition.string.begin.envelope-pattern"},
+            "3": {"name": "string.quoted.single.envelope-pattern"},
             "4": {"name": "punctuation.definition.string.end.envelope-pattern"}
           }
         }
