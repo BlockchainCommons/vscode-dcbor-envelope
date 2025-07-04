@@ -46,8 +46,8 @@
     "syntactic-placeholders": {
       "patterns": [
         {
-          "comment": "Syntactic placeholder keywords",
-          "match": "\\b(?:patex|dcbor-patex|envelope-patex|hex|iso-date)\\b",
+          "comment": "Syntactic placeholders in angle brackets",
+          "match": "<[a-zA-Z0-9_-]+>",
           "name": "keyword.placeholder.patex"
         }
       ]
