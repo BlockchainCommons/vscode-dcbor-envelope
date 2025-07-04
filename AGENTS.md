@@ -14,7 +14,7 @@ code --extensionDevelopmentPath=$(pwd)
 ```
 
 - VS Code will open a new window with the extension enabled.
-- Open a file with the `.dcbor`, `.envelope`, or `.cbor` extension, or a markdown (`.md`) file with ` ```dcbor `, ` ```envelope `, ` ```cbor `, or ` ```envpat ` code fences to see the highlighting.
+- Open a file with the `.dcbor`, `.envelope`, or `.cbor` extension, or a markdown (`.md`) file with ` ```dcbor `, ` ```envelope `, ` ```cbor `, or ` ```patex ` code fences to see the highlighting.
 - To use the color themes, go to the Command Palette (`Cmd+Shift+P`) and select `Preferences: Color Theme`, then choose either `dCBOR Envelope Dark` or `dCBOR Envelope Light`.
 
 ## Installing in Your Main VS Code Installation

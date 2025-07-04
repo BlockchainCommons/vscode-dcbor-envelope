@@ -19,7 +19,7 @@ Filename extensions supported:
 - `.cbor`
 - `.dcbor`
 - `.envelope`
-- `.envpat`
+- `.patex`
 
 Opening a file with any of these extensions will apply the same syntax highlighting, and blocks of code in these formats can be collapsed in the editor.
 
@@ -28,7 +28,7 @@ Markdown code fences supported:
 - ` ```cbor`
 - ` ```dcbor`
 - ` ```envelope`
-- ` ```envpat`
+- ` ```patex`
 
 Blocks of code in Markdown will be highlighted, but cannot be collapsed in the editor.
 
@@ -47,7 +47,7 @@ These themes are designed to enhance the readability of dCBOR and Envelope files
 
 ![Gordian Envelope Tree Example](images/envelope_tree_example.png)
 
-![Gordian Envelope Pattern Example](images/envpat_example.png)
+![Gordian Envelope Pattern Example](images/patex_example.png)
 
 ## Status - Community Review
 

@@ -4,7 +4,7 @@
 
 ### Value Patterns
 
-```envpat
+```patex
 # Booleans
 bool
 true
@@ -52,7 +52,7 @@ text
 
 ### Structure Patterns
 
-```envpat
+```patex
 # Digests
 digest
 digest'00112233'
@@ -86,7 +86,7 @@ tagged(/regex/, "value")
 
 ### Meta Patterns
 
-```envpat
+```patex
 # And
 >=52 & <100
 
@@ -124,13 +124,13 @@ search(text)
 ## Envelope Patterns
 
 ### CBOR Pattern
-```envpat
+```patex
 cbor("text")
 ```
 
 ### Structure Patterns
 
-```envpat
+```patex
 leaf
 assert
 assertpred ( patex )
@@ -153,7 +153,7 @@ wrapped
 unwrap
 ```
 
-```envpat
+```patex
 leaf
 [{1,2}]
 bool
@@ -268,7 +268,7 @@ BOOL(true)>BOOL(false)
 ANY > BOOL(true) & BOOL(false) > NONE | ANY > BOOL(true) & BOOL(false) >
 ```
 
-```envpat
+```patex
 ANY
 !TEXT("hi")
 !ANY & NONE
