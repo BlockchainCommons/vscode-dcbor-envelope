@@ -446,6 +446,12 @@ test('tokenize envelope pattern regexes', async () => {
       expectQuotes: true,
       expectKeywordPrefix: true,
       expectPlaceholder: true
+    },
+    {
+      text: '/^[^@]+@[^@]+\\.[^@]+$/',
+      description: 'bare regex with escaped characters',
+      expectRegex: true,
+      expectEscapedChars: true
     }
   ];
 
@@ -474,6 +480,10 @@ test('tokenize envelope pattern regexes', async () => {
 
     if (testCase.expectPlaceholder) {
       expect(scopes.some(scope => scope.includes('keyword.placeholder'))).toBe(true);
+    }
+
+    if (testCase.expectEscapedChars) {
+      expect(scopes.some(scope => scope.includes('constant.character.escape'))).toBe(true);
     }
 
     console.log(`✓ ${testCase.description}: ${testCase.text}`);
