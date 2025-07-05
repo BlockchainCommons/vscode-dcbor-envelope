@@ -12,6 +12,9 @@
       "include": "#double-quoted-strings"
     },
     {
+      "include": "#bare-single-quoted-strings"
+    },
+    {
       "include": "#bare-quoted-regex"
     },
     {
@@ -346,6 +349,39 @@
             },
             {
               "include": "$self"
+            }
+          ]
+        }
+      ]
+    },
+    "bare-single-quoted-strings": {
+      "patterns": [
+        {
+          "comment": "Bare single-quoted strings with syntactic placeholders",
+          "begin": "(?<!\\w)'(?!/)",
+          "end": "'",
+          "name": "string.quoted.single.patex",
+          "beginCaptures": {
+            "0": {"name": "punctuation.definition.string.begin.patex"}
+          },
+          "endCaptures": {
+            "0": {"name": "punctuation.definition.string.end.patex"}
+          },
+          "patterns": [
+            {
+              "comment": "Syntactic placeholders within bare single-quoted strings",
+              "match": "<[a-zA-Z0-9_/:-]+>",
+              "name": "keyword.placeholder.patex"
+            },
+            {
+              "comment": "Regular string content",
+              "match": "[^'<\\\\]+",
+              "name": "string.quoted.single.patex"
+            },
+            {
+              "comment": "Escaped characters",
+              "match": "\\\\.",
+              "name": "constant.character.escape.patex"
             }
           ]
         }

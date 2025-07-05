@@ -489,3 +489,75 @@ test('tokenize envelope pattern regexes', async () => {
     console.log(`✓ ${testCase.description}: ${testCase.text}`);
   }
 });
+
+test('tokenize bare single-quoted strings with syntactic placeholders', async () => {
+  const grammarPath = path.join(__dirname, '..', 'syntaxes', 'patex.tmLanguage.json');
+  const grammarContent = fs.readFileSync(grammarPath, 'utf8');
+  const registry = new Registry({
+    onigLib: Promise.resolve(onigLib),
+    loadGrammar: async (scopeName: string) => {
+      if (scopeName === 'source.patex') {
+        return JSON.parse(grammarContent);
+      }
+      if (scopeName === 'source.dcbor-envelope') {
+        const dcborGrammarPath = path.join(__dirname, '..', 'syntaxes', 'dcbor-envelope.tmLanguage.json');
+        const dcborGrammarContent = fs.readFileSync(dcborGrammarPath, 'utf8');
+        return JSON.parse(dcborGrammarContent);
+      }
+      return null;
+    }
+  });
+  const grammar = await registry.loadGrammar('source.patex');
+  if (!grammar) throw new Error('Patex grammar failed to load');
+
+  // Test cases for bare single-quoted strings with syntactic placeholders
+  const testCases = [
+    {
+      text: "'<value>'",
+      description: 'bare single-quoted string with value placeholder',
+      expectString: true,
+      expectPlaceholder: true
+    },
+    {
+      text: "'<name>'",
+      description: 'bare single-quoted string with name placeholder',
+      expectString: true,
+      expectPlaceholder: true
+    },
+    {
+      text: "'<hex>'",
+      description: 'bare single-quoted string with hex placeholder',
+      expectString: true,
+      expectPlaceholder: true
+    },
+    {
+      text: "'regular text'",
+      description: 'bare single-quoted string without placeholders',
+      expectString: true,
+      expectPlaceholder: false
+    },
+    {
+      text: "'text with <placeholder> inside'",
+      description: 'bare single-quoted string with placeholder in middle',
+      expectString: true,
+      expectPlaceholder: true
+    }
+  ];
+
+  for (const testCase of testCases) {
+    const { tokens } = grammar.tokenizeLine(testCase.text, INITIAL);
+    const scopes = tokens.flatMap(t => t.scopes);
+
+    if (testCase.expectString) {
+      expect(scopes.some(scope => scope.includes('string.quoted.single'))).toBe(true);
+    }
+
+    if (testCase.expectPlaceholder) {
+      expect(scopes.some(scope => scope.includes('keyword.placeholder'))).toBe(true);
+    } else {
+      expect(scopes.some(scope => scope.includes('keyword.placeholder'))).toBe(false);
+    }
+
+    console.log(`✓ ${testCase.description}: ${testCase.text}`);
+  }
+});
