@@ -137,22 +137,22 @@ cbor(/regex/)
 
 leaf
 assert
-assertpred ( patex )
-assertobj ( patex )
-digest ( hex )
-digest ( ur:digest/value )
+assertpred ( <patex> )
+assertobj ( <patex> )
+digest ( <hex> )
+digest ( <ur:digest/value> )
 node
-node ( { n, m } )
+node ( <repeat> )
 obj
-obj ( patex )
+obj ( <patex> )
 obscured
 elided
 encrypted
 compressed
 pred
-pred ( patex )
+pred ( <patex> )
 subj
-subj ( patex )
+subj ( <patex> )
 wrapped
 unwrap
 
