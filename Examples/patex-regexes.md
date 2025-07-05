@@ -9,6 +9,7 @@ baz(/abc/)
 
 # Bare regexes (not to be confused with inline comments in dCBOR diagnostic notation)
 /abc/
+/^[^@]+@[^@]+\.[^@]+$/
 
 # Regexes in prefixed single-quoted strings
 h'/abc/'
