@@ -88,7 +88,7 @@ digest'ur:digest/aabbccdd'
 digest'/regex/'
 
 # Arrays
-[*]
+array
 [{3}]
 [{3,5}]
 [{3,}]
@@ -99,7 +99,7 @@ digest'/regex/'
 [(*)*, 42]
 
 # Maps
-{*}
+map
 {{3}}
 {{3,5}}
 {{3,}}

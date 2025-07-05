@@ -44,7 +44,7 @@
       "patterns": [
         {
           "comment": "Patex keywords",
-          "match": "\\b(?:leaf|bool|bstr|cbor|date|known|number|tagged|text|assert|assertpred|assertobj|digest|node|obj|obscured|elided|encrypted|compressed|pred|subj|wrapped|unwrap|search)\\b",
+          "match": "\\b(?:leaf|bool|bstr|cbor|date|known|number|tagged|text|array|map|assert|assertpred|assertobj|digest|node|obj|obscured|elided|encrypted|compressed|pred|subj|wrapped|unwrap|search)\\b",
           "name": "keyword.other.patex"
         }
       ]
@@ -88,7 +88,7 @@
       "patterns": [
         {
           "comment": "Prefixed single-quoted strings containing regex patterns with keyword prefixes",
-          "begin": "\\b(leaf|bool|bstr|cbor|date|known|number|tagged|text|assert|assertpred|assertobj|digest|node|obj|obscured|elided|encrypted|compressed|pred|subj|wrapped|unwrap|search)(')(/)",
+          "begin": "\\b(leaf|bool|bstr|cbor|date|known|number|tagged|text|array|map|assert|assertpred|assertobj|digest|node|obj|obscured|elided|encrypted|compressed|pred|subj|wrapped|unwrap|search)(')(/)",
           "end": "(/[gimsuxy]*)(')",
           "beginCaptures": {
             "1": {"name": "keyword.other.patex"},
@@ -154,7 +154,7 @@
       "patterns": [
         {
           "comment": "Prefixed single-quoted strings with syntactic placeholders and keyword prefixes",
-          "begin": "\\b(leaf|bool|bstr|cbor|date|known|number|tagged|text|assert|assertpred|assertobj|digest|node|obj|obscured|elided|encrypted|compressed|pred|subj|wrapped|unwrap|search)(')",
+          "begin": "\\b(leaf|bool|bstr|cbor|date|known|number|tagged|text|array|map|assert|assertpred|assertobj|digest|node|obj|obscured|elided|encrypted|compressed|pred|subj|wrapped|unwrap|search)(')",
           "end": "'",
           "beginCaptures": {
             "1": {"name": "keyword.other.patex"},
