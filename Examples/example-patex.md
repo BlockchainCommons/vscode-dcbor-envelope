@@ -23,6 +23,9 @@ h'<hex>'
 h'/<regex>/'
 "<text>"
 date'<iso-date>'
+
+'<value>'
+'<name>'
 ```
 
 ## dCBOR Patex
