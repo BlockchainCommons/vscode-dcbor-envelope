@@ -1,0 +1,1 @@
+- When you have a change ready, let me test it. You can still run `npm run build` and `npm run test`, but let me do the visual tests.
