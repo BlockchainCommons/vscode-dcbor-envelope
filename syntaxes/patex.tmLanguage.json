@@ -212,9 +212,28 @@
     "double-quoted-strings": {
       "patterns": [
         {
-          "comment": "Double-quoted strings",
-          "name": "string.quoted.double.patex",
-          "match": "\"(?:[^\"\\\\]|\\\\.)*\""
+          "comment": "Double-quoted strings with syntactic placeholders",
+          "begin": "\"",
+          "end": "\"",
+          "name": "string.quoted.double.dcbor",
+          "beginCaptures": {
+            "0": {"name": "punctuation.definition.string.begin.dcbor"}
+          },
+          "endCaptures": {
+            "0": {"name": "punctuation.definition.string.end.dcbor"}
+          },
+          "patterns": [
+            {
+              "comment": "Syntactic placeholders within double-quoted strings",
+              "match": "<[a-zA-Z0-9_/:-]+>",
+              "name": "keyword.placeholder.patex"
+            },
+            {
+              "comment": "Escaped characters",
+              "match": "\\\\.",
+              "name": "constant.character.escape.dcbor"
+            }
+          ]
         }
       ]
     },
