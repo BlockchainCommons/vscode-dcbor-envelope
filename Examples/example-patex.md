@@ -1,5 +1,13 @@
 # Gordian Pattern Expression Languages (patex)
 
+```patex
+"Hello"
+```
+
+```dcbor
+"Hello"
+```
+
 ## Syntactic placeholders:
 
 ```patex
